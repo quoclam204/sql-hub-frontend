@@ -1,0 +1,83 @@
+name: Generator tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+concurrency:
+  group: generators-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  static:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm ci
+      - name: Set up env
+        run: cp example.env.local .env.local
+      - name: Run static generator suite
+        run: npm run test:generators:static
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: static-playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+  crud:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out frontend
+        uses: actions/checkout@v6
+      - name: Check out backend
+        uses: actions/checkout@v6
+        with:
+          repository: brocoders/nestjs-boilerplate
+          path: nestjs-boilerplate
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm ci
+      - name: Install backend dependencies
+        run: npm ci
+        working-directory: nestjs-boilerplate
+      - name: Set up env
+        run: cp example.env.local .env.local
+      - name: Resolve Playwright version
+        id: pw
+        run: echo "version=$(node -e "console.log(require('@playwright/test/package.json').version)")" >> "$GITHUB_OUTPUT"
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ steps.pw.outputs.version }}
+      - name: Install Playwright system deps (cache hit)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+      - name: Install Playwright browsers (cache miss)
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+      - name: Run CRUD generator suite
+        env:
+          NESTJS_DIR: ${{ github.workspace }}/nestjs-boilerplate
+        run: npm run test:e2e:generators:crud
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: crud-playwright-report
+          path: playwright-report/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: crud-backend-log
+          path: test-results/backend.log
+          retention-days: 30
