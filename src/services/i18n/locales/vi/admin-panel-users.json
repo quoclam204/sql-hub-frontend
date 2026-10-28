@@ -1,0 +1,36 @@
+{
+  "title": "Người dùng",
+  "table": {
+    "column1": "ID",
+    "column2": "Tên",
+    "column3": "Email",
+    "column4": "Vai trò"
+  },
+  "actions": {
+    "add": "Thêm người dùng",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "create": "Tạo người dùng"
+  },
+  "confirm": {
+    "delete": {
+      "title": "Xóa người dùng",
+      "message": "Bạn có chắc chắn muốn xóa người dùng này không?"
+    }
+  },
+  "filter": {
+    "actions": {
+      "filter": "Bộ lọc",
+      "apply": "Áp dụng"
+    },
+    "inputs": {
+      "role": {
+        "label": "Vai trò",
+        "options": {
+          "1": "Quản trị viên",
+          "2": "Người dùng"
+        }
+      }
+    }
+  }
+}

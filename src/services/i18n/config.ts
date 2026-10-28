@@ -6,6 +6,7 @@ export const languages = [
   "fr",
   "hi",
   "uk",
+  "vi",
   "zh",
 ] as const;
 export const defaultNamespace = "common";

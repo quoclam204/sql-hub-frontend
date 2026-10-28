@@ -1,0 +1,61 @@
+{
+  "title": "Tạo người dùng",
+  "actions": {
+    "submit": "Lưu",
+    "cancel": "Hủy"
+  },
+  "inputs": {
+    "email": {
+      "label": "Email",
+      "validation": {
+        "invalid": "Email không hợp lệ",
+        "required": "Email là bắt buộc",
+        "server": {
+          "emailAlreadyExists": "Email đã tồn tại"
+        }
+      }
+    },
+    "firstName": {
+      "label": "Tên",
+      "validation": {
+        "required": "Tên là bắt buộc"
+      }
+    },
+    "lastName": {
+      "label": "Họ",
+      "validation": {
+        "required": "Họ là bắt buộc"
+      }
+    },
+    "role": {
+      "label": "Vai trò",
+      "validation": {
+        "required": "Vai trò là bắt buộc"
+      },
+      "options": {
+        "1": "Quản trị viên",
+        "2": "Người dùng"
+      }
+    },
+    "password": {
+      "label": "Mật khẩu",
+      "validation": {
+        "required": "Mật khẩu là bắt buộc",
+        "min": "Mật khẩu phải dài ít nhất 6 ký tự"
+      }
+    },
+    "passwordConfirmation": {
+      "label": "Xác nhận mật khẩu",
+      "validation": {
+        "required": "Xác nhận mật khẩu là bắt buộc",
+        "match": "Xác nhận mật khẩu phải khớp với mật khẩu"
+      }
+    },
+    "<system>": "Không xóa thuộc tính này"
+  },
+  "alerts": {
+    "user": {
+      "success": "Hồ sơ người dùng đã được tạo thành công"
+    }
+  }
+}

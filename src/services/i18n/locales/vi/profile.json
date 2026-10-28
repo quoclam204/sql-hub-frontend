@@ -1,0 +1,78 @@
+{
+  "title": "Hồ sơ",
+  "title1": "Chỉnh sửa hồ sơ",
+  "title2": "Đổi email",
+  "title3": "Đổi mật khẩu",
+  "actions": {
+    "edit": "Chỉnh sửa",
+    "submit": "Lưu",
+    "cancel": "Hủy"
+  },
+  "inputs": {
+    "firstName": {
+      "label": "Tên",
+      "validation": {
+        "required": "Tên là bắt buộc"
+      }
+    },
+    "lastName": {
+      "label": "Họ",
+      "validation": {
+        "required": "Họ là bắt buộc"
+      }
+    },
+    "email": {
+      "label": "Email mới",
+      "validation": {
+        "required": "Email là bắt buộc",
+        "email": "Email phải hợp lệ",
+        "currentEmail": "Email phải khác với email hiện tại",
+        "server": {
+          "emailExists": "Email đã được sử dụng"
+        }
+      }
+    },
+    "emailConfirmation": {
+      "label": "Xác nhận email",
+      "validation": {
+        "required": "Xác nhận email là bắt buộc",
+        "match": "Xác nhận email phải khớp với email"
+      }
+    },
+    "oldPassword": {
+      "label": "Mật khẩu cũ",
+      "validation": {
+        "required": "Mật khẩu cũ là bắt buộc",
+        "min": "Mật khẩu cũ phải dài ít nhất 6 ký tự",
+        "server": {
+          "incorrectOldPassword": "Mật khẩu cũ không đúng"
+        }
+      }
+    },
+    "password": {
+      "label": "Mật khẩu mới",
+      "validation": {
+        "required": "Mật khẩu mới là bắt buộc",
+        "min": "Mật khẩu mới phải dài ít nhất 6 ký tự"
+      }
+    },
+    "passwordConfirmation": {
+      "label": "Xác nhận mật khẩu",
+      "validation": {
+        "required": "Xác nhận mật khẩu là bắt buộc",
+        "match": "Xác nhận mật khẩu phải khớp với mật khẩu"
+      }
+    }
+  },
+  "alerts": {
+    "email": {
+      "success": "Yêu cầu thay đổi email đã được gửi đến địa chỉ email mới của bạn. Vui lòng kiểm tra email và nhấp vào liên kết để xác nhận thay đổi."
+    },
+    "password": {
+      "success": "Mật khẩu đã được cập nhật thành công"
+    },
+    "profile": {
+      "success": "Hồ sơ đã được cập nhật thành công"
+    }
+  }
+}
