@@ -12,6 +12,7 @@
     "lessons": "Bài học",
     "quizQuestions": "Câu hỏi trắc nghiệm",
     "labs": "Bài thực hành SQL",
+    "bulkImport": "Nhập dữ liệu hàng loạt",
     "logout": "Đăng xuất"
   },
   "formInputs": {

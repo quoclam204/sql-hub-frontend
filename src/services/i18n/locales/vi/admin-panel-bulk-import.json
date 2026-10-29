@@ -1,0 +1,58 @@
+{
+  "title": "Nhập dữ liệu nội dung học tập hàng loạt",
+  "description": "Nhập hàng loạt bài học, câu hỏi trắc nghiệm và bài thực hành SQL từ tệp hoặc văn bản định dạng JSON hoặc Markdown.",
+  "types": {
+    "lessons": "Bài học (Lessons)",
+    "quizQuestions": "Câu hỏi trắc nghiệm (Quizzes)",
+    "labs": "Bài thực hành (SQL Labs)"
+  },
+  "formats": {
+    "json": "JSON Data",
+    "markdown": "Markdown Document"
+  },
+  "actions": {
+    "selectType": "Chọn loại nội dung",
+    "selectFormat": "Chọn định dạng",
+    "loadTemplate": "Nạp dữ liệu mẫu",
+    "uploadFile": "Tải lên tệp",
+    "dragDropText": "Kéo thả hoặc bấm để chọn tệp .json / .md",
+    "validate": "Xem trước & Kiểm tra",
+    "import": "Thực hiện Nhập dữ liệu",
+    "clear": "Xóa trắng"
+  },
+  "editor": {
+    "label": "Nội dung dữ liệu (JSON hoặc Markdown)",
+    "placeholder": "Dán nội dung JSON hoặc Markdown vào đây hoặc tải lên tệp..."
+  },
+  "preview": {
+    "title": "Xem trước dữ liệu hợp lệ",
+    "validBadge": "Hợp lệ",
+    "totalItems": "Tổng số bản ghi",
+    "columns": {
+      "index": "STT",
+      "identifier": "Định danh / Tiêu đề",
+      "details": "Chi tiết bản ghi"
+    }
+  },
+  "errors": {
+    "title": "Phát hiện lỗi kiểm tra dữ liệu",
+    "summary": "Không thể import vì có lỗi sau. Dữ liệu chưa được ghi vào hệ thống.",
+    "columns": {
+      "row": "Bản ghi #",
+      "field": "Trường dữ liệu",
+      "message": "Nội dung lỗi"
+    }
+  },
+  "results": {
+    "successTitle": "Nhập dữ liệu thành công!",
+    "successMessage": "Tất cả các bản ghi đã được tạo an toàn trong một transaction duy nhất.",
+    "importedCount": "Số bản ghi đã thêm",
+    "viewList": "Đi tới trang quản lý"
+  },
+  "alerts": {
+    "emptyContent": "Vui lòng nhập hoặc tải lên nội dung dữ liệu trước khi kiểm tra.",
+    "parseError": "Định dạng dữ liệu không hợp lệ. Vui lòng kiểm tra lại cú pháp.",
+    "importSuccess": "Đã nhập thành công các bản ghi vào cơ sở dữ liệu.",
+    "importFailed": "Nhập dữ liệu thất bại. Toàn bộ thay đổi đã được hoàn tác."
+  }
+}

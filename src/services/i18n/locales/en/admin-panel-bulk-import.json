@@ -1,0 +1,58 @@
+{
+  "title": "Bulk Content Import",
+  "description": "Bulk import lessons, quiz questions, and SQL practice labs from JSON or Markdown documents.",
+  "types": {
+    "lessons": "Lessons",
+    "quizQuestions": "Quiz Questions",
+    "labs": "SQL Labs"
+  },
+  "formats": {
+    "json": "JSON Data",
+    "markdown": "Markdown Document"
+  },
+  "actions": {
+    "selectType": "Select Content Type",
+    "selectFormat": "Select Format",
+    "loadTemplate": "Load Sample Template",
+    "uploadFile": "Upload File",
+    "dragDropText": "Drag and drop or click to choose a .json / .md file",
+    "validate": "Preview & Validate",
+    "import": "Execute Import",
+    "clear": "Clear"
+  },
+  "editor": {
+    "label": "Content Data (JSON or Markdown)",
+    "placeholder": "Paste your JSON or Markdown content here, or upload a file..."
+  },
+  "preview": {
+    "title": "Valid Data Preview",
+    "validBadge": "Valid",
+    "totalItems": "Total Records",
+    "columns": {
+      "index": "#",
+      "identifier": "Identifier / Title",
+      "details": "Record Details"
+    }
+  },
+  "errors": {
+    "title": "Validation Issues Detected",
+    "summary": "Import cannot proceed due to the following validation errors. No data was modified.",
+    "columns": {
+      "row": "Record #",
+      "field": "Field",
+      "message": "Error Message"
+    }
+  },
+  "results": {
+    "successTitle": "Bulk Import Successful!",
+    "successMessage": "All records were securely created within a single atomic transaction.",
+    "importedCount": "Imported Records",
+    "viewList": "Go to Management Page"
+  },
+  "alerts": {
+    "emptyContent": "Please enter or upload content before validating.",
+    "parseError": "Invalid content format. Please verify the syntax.",
+    "importSuccess": "All records successfully imported into the database.",
+    "importFailed": "Import failed. All changes have been rolled back."
+  }
+}

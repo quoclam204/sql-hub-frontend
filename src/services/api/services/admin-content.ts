@@ -336,3 +336,65 @@ export function useDeleteAdminLabService() {
     [fetch]
   );
 }
+
+// ── Bulk Import Types & Hooks ───────────────────────────────────
+export type BulkImportType = "lessons" | "quiz-questions" | "labs";
+export type BulkImportFormat = "json" | "markdown";
+
+export type BulkImportPayload = {
+  type: BulkImportType;
+  format: BulkImportFormat;
+  content: string;
+  dryRun?: boolean;
+};
+
+export type BulkImportErrorItem = {
+  index: number;
+  identifier?: string;
+  field?: string;
+  message: string;
+};
+
+export type BulkImportResult = {
+  success: boolean;
+  type: BulkImportType;
+  dryRun: boolean;
+  totalCount: number;
+  importedCount: number;
+  errors: BulkImportErrorItem[];
+  preview?: any[];
+};
+
+export type BulkImportTemplates = {
+  lessons: { json: string; markdown: string };
+  quizQuestions: { json: string; markdown: string };
+  labs: { json: string; markdown: string };
+};
+
+export function usePostAdminBulkImportService() {
+  const fetch = useFetch();
+  return useCallback(
+    (data: BulkImportPayload, requestConfig?: RequestConfigType) => {
+      return fetch(`${API_URL}/v1/admin/bulk-import`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        ...requestConfig,
+      }).then(wrapperFetchJsonResponse<BulkImportResult>);
+    },
+    [fetch]
+  );
+}
+
+export function useGetAdminBulkImportTemplatesService() {
+  const fetch = useFetch();
+  return useCallback(
+    (requestConfig?: RequestConfigType) => {
+      return fetch(`${API_URL}/v1/admin/bulk-import/templates`, {
+        method: "GET",
+        ...requestConfig,
+      }).then(wrapperFetchJsonResponse<BulkImportTemplates>);
+    },
+    [fetch]
+  );
+}
+

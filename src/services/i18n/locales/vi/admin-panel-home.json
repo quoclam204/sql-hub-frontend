@@ -21,6 +21,11 @@
       "title": "Phòng thực hành SQL",
       "description": "Cấu hình bài lab thực hành, câu lệnh truy vấn mẫu và bộ dữ liệu mẫu.",
       "action": "Quản lý bài lab"
+    },
+    "bulkImport": {
+      "title": "Nhập dữ liệu hàng loạt",
+      "description": "Nhập hàng loạt bài học, câu hỏi trắc nghiệm và bài thực hành SQL từ định dạng JSON hoặc Markdown.",
+      "action": "Nhập dữ liệu hàng loạt"
     }
   }
 }

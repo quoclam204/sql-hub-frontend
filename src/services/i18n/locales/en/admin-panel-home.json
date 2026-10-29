@@ -21,6 +21,11 @@
       "title": "SQL Practice Labs",
       "description": "Configure interactive SQL labs, expected query solutions, and datasets.",
       "action": "Manage Labs"
+    },
+    "bulkImport": {
+      "title": "Bulk Import Content",
+      "description": "Bulk import lessons, quiz questions, and SQL practice labs from JSON or Markdown format.",
+      "action": "Go to Bulk Import"
     }
   }
 }

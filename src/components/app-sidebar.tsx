@@ -213,6 +213,16 @@ function AppSidebar() {
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/bulk-import")}
+                      >
+                        <Link href="/admin-panel/bulk-import" data-testid="nav-admin-bulk-import">
+                          {t("common:navigation.bulkImport")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
                     {/* sidebar-menu-items */}
                   </>
                 )}
