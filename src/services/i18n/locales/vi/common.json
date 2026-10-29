@@ -9,6 +9,9 @@
     "signUp": "Đăng ký",
     "profile": "Hồ sơ",
     "users": "Người dùng",
+    "lessons": "Bài học",
+    "quizQuestions": "Câu hỏi trắc nghiệm",
+    "labs": "Bài thực hành SQL",
     "logout": "Đăng xuất"
   },
   "formInputs": {

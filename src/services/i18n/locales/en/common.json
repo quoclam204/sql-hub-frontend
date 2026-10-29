@@ -9,6 +9,9 @@
     "signUp": "Sign Up",
     "profile": "Profile",
     "users": "Users",
+    "lessons": "Lessons",
+    "quizQuestions": "Quiz Questions",
+    "labs": "SQL Labs",
     "logout": "Logout"
   },
   "formInputs": {

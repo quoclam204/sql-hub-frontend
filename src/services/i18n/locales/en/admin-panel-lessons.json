@@ -1,0 +1,44 @@
+{
+  "title": "Lesson Management",
+  "description": "Create, edit, organize and manage bilingual lessons across SQL courses.",
+  "actions": {
+    "add": "Add New Lesson",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save Lesson",
+    "cancel": "Cancel",
+    "filterByCourse": "Filter by Course",
+    "allCourses": "All Courses"
+  },
+  "table": {
+    "order": "Order",
+    "slug": "Slug",
+    "course": "Course",
+    "titleVi": "Title (VI)",
+    "titleEn": "Title (EN)",
+    "actions": "Actions",
+    "noData": "No lessons found."
+  },
+  "form": {
+    "addTitle": "Create New Lesson",
+    "editTitle": "Edit Lesson",
+    "course": "Select Course",
+    "slug": "URL Slug",
+    "order": "Display Order",
+    "titleVi": "Lesson Title (Vietnamese)",
+    "contentVi": "Markdown Content (Vietnamese)",
+    "titleEn": "Lesson Title (English)",
+    "contentEn": "Markdown Content (English)"
+  },
+  "confirm": {
+    "deleteTitle": "Delete Lesson",
+    "deleteMessage": "Are you sure you want to delete this lesson? This action cannot be undone.",
+    "confirmBtn": "Yes, Delete"
+  },
+  "alerts": {
+    "createSuccess": "Lesson created successfully.",
+    "updateSuccess": "Lesson updated successfully.",
+    "deleteSuccess": "Lesson deleted successfully.",
+    "error": "An error occurred while saving the lesson."
+  }
+}

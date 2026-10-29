@@ -183,6 +183,36 @@ function AppSidebar() {
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/lessons")}
+                      >
+                        <Link href="/admin-panel/lessons" data-testid="nav-admin-lessons">
+                          {t("common:navigation.lessons")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/quiz-questions")}
+                      >
+                        <Link href="/admin-panel/quiz-questions" data-testid="nav-admin-quizzes">
+                          {t("common:navigation.quizQuestions")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/labs")}
+                      >
+                        <Link href="/admin-panel/labs" data-testid="nav-admin-labs">
+                          {t("common:navigation.labs")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
                     {/* sidebar-menu-items */}
                   </>
                 )}

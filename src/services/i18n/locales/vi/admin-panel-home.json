@@ -1,4 +1,26 @@
 {
   "title": "Bảng quản trị",
-  "description": "Chào mừng đến với bảng quản trị."
+  "description": "Chào mừng đến với cổng quản trị SQL Hub. Hãy chọn khu vực cần quản lý.",
+  "cards": {
+    "users": {
+      "title": "Quản lý người dùng",
+      "description": "Xem, lọc, phân quyền và chỉnh sửa tài khoản người dùng trên hệ thống.",
+      "action": "Quản lý người dùng"
+    },
+    "lessons": {
+      "title": "Quản lý bài học",
+      "description": "Tạo mới, sửa đổi, sắp xếp khóa học và cập nhật lý thuyết bài học song ngữ.",
+      "action": "Quản lý bài học"
+    },
+    "quizzes": {
+      "title": "Câu hỏi trắc nghiệm",
+      "description": "Quản lý câu hỏi trắc nghiệm, các lựa chọn đáp án và giải thích song ngữ vi/en.",
+      "action": "Quản lý trắc nghiệm"
+    },
+    "labs": {
+      "title": "Phòng thực hành SQL",
+      "description": "Cấu hình bài lab thực hành, câu lệnh truy vấn mẫu và bộ dữ liệu mẫu.",
+      "action": "Quản lý bài lab"
+    }
+  }
 }

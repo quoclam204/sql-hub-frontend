@@ -1,0 +1,50 @@
+{
+  "title": "Quản lý câu hỏi trắc nghiệm",
+  "description": "Tạo mới, chỉnh sửa, sắp xếp và quản lý các câu hỏi trắc nghiệm song ngữ kèm đáp án lựa chọn.",
+  "actions": {
+    "add": "Thêm câu hỏi mới",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "save": "Lưu câu hỏi",
+    "cancel": "Hủy",
+    "filterByQuiz": "Lọc theo bài kiểm tra",
+    "allQuizzes": "Tất cả bài kiểm tra",
+    "addOption": "Thêm phương án trả lời",
+    "removeOption": "Xóa"
+  },
+  "table": {
+    "order": "Thứ tự",
+    "quiz": "Bài kiểm tra",
+    "questionVi": "Nội dung câu hỏi (VI)",
+    "questionEn": "Nội dung câu hỏi (EN)",
+    "optionsCount": "Số đáp án",
+    "actions": "Thao tác",
+    "noData": "Không tìm thấy câu hỏi trắc nghiệm nào."
+  },
+  "form": {
+    "addTitle": "Thêm câu hỏi trắc nghiệm mới",
+    "editTitle": "Chỉnh sửa câu hỏi trắc nghiệm",
+    "quiz": "Chọn bài kiểm tra",
+    "order": "Thứ tự hiển thị",
+    "questionVi": "Nội dung câu hỏi (Tiếng Việt)",
+    "explanationVi": "Lời giải thích (Tiếng Việt)",
+    "questionEn": "Nội dung câu hỏi (Tiếng Anh)",
+    "explanationEn": "Lời giải thích (Tiếng Anh)",
+    "optionsSection": "Danh sách phương án trả lời",
+    "optionViPlaceholder": "Phương án Tiếng Việt",
+    "optionEnPlaceholder": "Phương án Tiếng Anh",
+    "correctAnswer": "Đáp án đúng"
+  },
+  "confirm": {
+    "deleteTitle": "Xóa câu hỏi trắc nghiệm",
+    "deleteMessage": "Bạn có chắc chắn muốn xóa câu hỏi này không? Các phương án tương ứng cũng sẽ bị xóa.",
+    "confirmBtn": "Xóa câu hỏi"
+  },
+  "alerts": {
+    "createSuccess": "Đã tạo câu hỏi trắc nghiệm thành công.",
+    "updateSuccess": "Đã cập nhật câu hỏi trắc nghiệm thành công.",
+    "deleteSuccess": "Đã xóa câu hỏi trắc nghiệm thành công.",
+    "error": "Đã xảy ra lỗi khi lưu câu hỏi.",
+    "optionValidationError": "Vui lòng nhập ít nhất 2 phương án và chọn đúng 1 đáp án chính xác."
+  }
+}
