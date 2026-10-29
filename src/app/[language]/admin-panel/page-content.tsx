@@ -17,6 +17,7 @@ import BookOpen from "lucide-react/dist/esm/icons/book-open";
 import HelpCircle from "lucide-react/dist/esm/icons/help-circle";
 import FlaskConical from "lucide-react/dist/esm/icons/flask-conical";
 import Upload from "lucide-react/dist/esm/icons/upload";
+import BarChart3 from "lucide-react/dist/esm/icons/bar-chart-3";
 import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
 
 function AdminPanel() {
@@ -57,6 +58,13 @@ function AdminPanel() {
       icon: Upload,
       color: "text-indigo-500 bg-indigo-500/10",
       testId: "admin-card-bulk-import",
+    },
+    {
+      key: "statistics",
+      href: "/admin-panel/statistics",
+      icon: BarChart3,
+      color: "text-rose-500 bg-rose-500/10",
+      testId: "admin-card-statistics",
     },
   ];
 

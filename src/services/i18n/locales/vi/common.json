@@ -13,6 +13,7 @@
     "quizQuestions": "Câu hỏi trắc nghiệm",
     "labs": "Bài thực hành SQL",
     "bulkImport": "Nhập dữ liệu hàng loạt",
+    "statistics": "Thống kê",
     "logout": "Đăng xuất"
   },
   "formInputs": {

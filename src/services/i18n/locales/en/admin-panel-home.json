@@ -26,6 +26,11 @@
       "title": "Bulk Import Content",
       "description": "Bulk import lessons, quiz questions, and SQL practice labs from JSON or Markdown format.",
       "action": "Go to Bulk Import"
+    },
+    "statistics": {
+      "title": "Platform Statistics",
+      "description": "Track learner counts, SQL lab pass rates, and learning progress metrics.",
+      "action": "View Statistics"
     }
   }
 }

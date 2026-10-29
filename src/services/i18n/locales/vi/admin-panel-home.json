@@ -26,6 +26,11 @@
       "title": "Nhập dữ liệu hàng loạt",
       "description": "Nhập hàng loạt bài học, câu hỏi trắc nghiệm và bài thực hành SQL từ định dạng JSON hoặc Markdown.",
       "action": "Nhập dữ liệu hàng loạt"
+    },
+    "statistics": {
+      "title": "Thống kê hệ thống",
+      "description": "Theo dõi số lượng học viên, tỷ lệ vượt qua bài thực hành SQL và tiến độ học tập.",
+      "action": "Xem thống kê"
     }
   }
 }

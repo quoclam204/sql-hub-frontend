@@ -223,6 +223,16 @@ function AppSidebar() {
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/statistics")}
+                      >
+                        <Link href="/admin-panel/statistics" data-testid="nav-admin-statistics">
+                          {t("common:navigation.statistics")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
                     {/* sidebar-menu-items */}
                   </>
                 )}

@@ -398,3 +398,47 @@ export function useGetAdminBulkImportTemplatesService() {
   );
 }
 
+// ── Statistics Types & Hooks ────────────────────────────────────
+export type LabStatItem = {
+  labId: number;
+  titleVi: string;
+  titleEn: string;
+  totalSubmissions: number;
+  passedSubmissions: number;
+  passRate: number;
+  averageRuntimeMs: number;
+};
+
+export type AdminStatisticsOverview = {
+  totalLearners: number;
+  activeLearners: number;
+  totalLessons: number;
+  completedLessonsCount: number;
+  totalLabs: number;
+  totalSubmissions: number;
+  passedSubmissions: number;
+  labPassRate: number;
+  learnerLabPassRate: number;
+  totalQuizAttempts: number;
+  averageQuizScore: number;
+};
+
+export type AdminStatisticsResponse = {
+  overview: AdminStatisticsOverview;
+  labsStatistics: LabStatItem[];
+};
+
+export function useGetAdminStatisticsService() {
+  const fetch = useFetch();
+  return useCallback(
+    (requestConfig?: RequestConfigType) => {
+      return fetch(`${API_URL}/v1/admin/statistics`, {
+        method: "GET",
+        ...requestConfig,
+      }).then(wrapperFetchJsonResponse<AdminStatisticsResponse>);
+    },
+    [fetch]
+  );
+}
+
+

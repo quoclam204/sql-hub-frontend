@@ -13,6 +13,7 @@
     "quizQuestions": "Quiz Questions",
     "labs": "SQL Labs",
     "bulkImport": "Bulk Import",
+    "statistics": "Statistics",
     "logout": "Logout"
   },
   "formInputs": {
