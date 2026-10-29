@@ -4,6 +4,7 @@
   "close": "Close",
   "navigation": {
     "home": "Home",
+    "dashboard": "Dashboard",
     "signIn": "Sign In",
     "signUp": "Sign Up",
     "profile": "Profile",

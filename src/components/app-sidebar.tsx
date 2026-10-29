@@ -114,6 +114,9 @@ function NavUser() {
             align="start"
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56"
           >
+            <DropdownMenuItem asChild data-testid="user-dashboard">
+              <Link href="/dashboard">{t("common:navigation.dashboard")}</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem asChild data-testid="user-profile">
               <Link href="/profile">{t("common:navigation.profile")}</Link>
             </DropdownMenuItem>
@@ -154,6 +157,19 @@ function AppSidebar() {
                     <Link href="/">{t("common:navigation.home")}</Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
+
+                {user && (
+                  <SidebarMenuItem>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={pathname.includes("/dashboard")}
+                    >
+                      <Link href="/dashboard" data-testid="nav-dashboard">
+                        {t("common:navigation.dashboard")}
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )}
 
                 {isAdmin && (
                   <>
