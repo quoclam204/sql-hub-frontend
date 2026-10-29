@@ -8,6 +8,11 @@
     "submit": "Lưu",
     "cancel": "Hủy"
   },
+  "languages": {
+    "label": "Ngôn ngữ ưa thích",
+    "vi": "Tiếng Việt",
+    "en": "Tiếng Anh"
+  },
   "inputs": {
     "firstName": {
       "label": "Tên",
@@ -19,6 +24,12 @@
       "label": "Họ",
       "validation": {
         "required": "Họ là bắt buộc"
+      }
+    },
+    "locale": {
+      "label": "Ngôn ngữ ưa thích",
+      "validation": {
+        "required": "Ngôn ngữ ưa thích là bắt buộc"
       }
     },
     "email": {

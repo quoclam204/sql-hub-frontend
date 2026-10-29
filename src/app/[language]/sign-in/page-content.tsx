@@ -16,6 +16,8 @@ import SocialAuth from "@/services/social-auth/social-auth";
 import { isGoogleAuthEnabled } from "@/services/social-auth/google/google-config";
 import { isFacebookAuthEnabled } from "@/services/social-auth/facebook/facebook-config";
 import { IS_SIGN_UP_ENABLED } from "@/services/auth/config";
+import Cookies from "js-cookie";
+import { cookieName } from "@/services/i18n/config";
 
 type SignInFormData = {
   email: string;
@@ -90,6 +92,9 @@ function Form() {
         tokenExpires: data.tokenExpires,
       });
       setUser(data.user);
+      if (data.user?.locale) {
+        Cookies.set(cookieName, data.user.locale, { path: "/" });
+      }
     }
   });
 

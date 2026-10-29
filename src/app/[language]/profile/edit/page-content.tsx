@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useForm, FormProvider, useFormState } from "react-hook-form";
+import { useForm, FormProvider, useFormState, Controller } from "react-hook-form";
 import { useAuthPatchMeService } from "@/services/api/services/auth";
 import useAuthActions from "@/services/auth/use-auth-actions";
 import FormTextInput from "@/components/form/text-input/form-text-input";
@@ -17,11 +17,25 @@ import useLeavePage from "@/services/leave-page/use-leave-page";
 import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
 import { useTranslation } from "@/services/i18n/client";
 import { UserProviderEnum } from "@/services/api/types/user";
+import useLanguage from "@/services/i18n/use-language";
+import Cookies from "js-cookie";
+import { cookieName } from "@/services/i18n/config";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { cn } from "@/lib/utils";
+import { Loader2 } from "lucide-react";
 
 type EditProfileBasicInfoFormData = {
   firstName: string;
   lastName: string;
   photo?: FileEntity;
+  locale: string;
 };
 
 type EditProfileChangePasswordFormData = {
@@ -45,6 +59,10 @@ const useValidationBasicInfoSchema = () => {
     lastName: yup
       .string()
       .required(t("profile:inputs.lastName.validation.required")),
+    locale: yup
+      .string()
+      .oneOf(["vi", "en"])
+      .required(t("profile:inputs.locale.validation.required")),
   });
 };
 
@@ -100,7 +118,14 @@ function BasicInfoFormActions() {
 
   return (
     <Button type="submit" disabled={isSubmitting} data-testid="save-profile">
-      {t("profile:actions.submit")}
+      {isSubmitting ? (
+        <span className="flex items-center gap-2">
+          <Loader2 className="h-4 w-4 animate-spin" />
+          {t("profile:actions.submit")}
+        </span>
+      ) : (
+        t("profile:actions.submit")
+      )}
     </Button>
   );
 }
@@ -132,6 +157,7 @@ function ChangePasswordFormActions() {
 function FormBasicInfo() {
   const { setUser } = useAuthActions();
   const { user } = useAuth();
+  const currentLanguage = useLanguage();
   const fetchAuthPatchMe = useAuthPatchMeService();
   const { t } = useTranslation("profile");
   const validationSchema = useValidationBasicInfoSchema();
@@ -143,10 +169,11 @@ function FormBasicInfo() {
       firstName: "",
       lastName: "",
       photo: undefined,
+      locale: "vi",
     },
   });
 
-  const { handleSubmit, setError, reset } = methods;
+  const { handleSubmit, setError, reset, control } = methods;
 
   const onSubmit = handleSubmit(async (formData) => {
     const { data, status } = await fetchAuthPatchMe(formData);
@@ -168,10 +195,17 @@ function FormBasicInfo() {
 
     if (status === HTTP_CODES_ENUM.OK) {
       setUser(data);
+      if (formData.locale) {
+        Cookies.set(cookieName, formData.locale, { path: "/" });
+      }
 
       enqueueSnackbar(t("profile:alerts.profile.success"), {
         variant: "success",
       });
+
+      if (formData.locale !== currentLanguage) {
+        window.location.assign(`/${formData.locale}/profile`);
+      }
     }
   });
 
@@ -180,8 +214,9 @@ function FormBasicInfo() {
       firstName: user?.firstName ?? "",
       lastName: user?.lastName ?? "",
       photo: user?.photo,
+      locale: user?.locale ?? currentLanguage ?? "vi",
     });
-  }, [user, reset]);
+  }, [user, currentLanguage, reset]);
 
   return (
     <FormProvider {...methods}>
@@ -211,6 +246,57 @@ function FormBasicInfo() {
                 name="lastName"
                 label={t("profile:inputs.lastName.label")}
                 testId="last-name"
+              />
+            </div>
+
+            <div className="col-span-12">
+              <Controller
+                control={control}
+                name="locale"
+                render={({ field, fieldState }) => (
+                  <div className="flex w-full flex-col gap-1.5">
+                    <Label htmlFor="select-locale">
+                      {t("profile:inputs.locale.label")}
+                    </Label>
+                    <Select
+                      value={field.value}
+                      onValueChange={field.onChange}
+                    >
+                      <SelectTrigger
+                        id="select-locale"
+                        data-testid="preferred-language"
+                        className={cn(
+                          "w-full",
+                          fieldState.error && "border-destructive"
+                        )}
+                      >
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem
+                          value="vi"
+                          data-testid="preferred-language-vi"
+                        >
+                          {t("profile:languages.vi")}
+                        </SelectItem>
+                        <SelectItem
+                          value="en"
+                          data-testid="preferred-language-en"
+                        >
+                          {t("profile:languages.en")}
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                    {!!fieldState.error && (
+                      <p
+                        data-testid="preferred-language-error"
+                        className="text-sm text-destructive"
+                      >
+                        {fieldState.error.message}
+                      </p>
+                    )}
+                  </div>
+                )}
               />
             </div>
 
