@@ -1,0 +1,12 @@
+{
+  "title": "Courses",
+  "description": "A step-by-step SQL learning path with lessons and hands-on practice.",
+  "lessonsCount": "{{count}} lessons",
+  "empty": "No courses available yet.",
+  "error": "Failed to load courses. Please try again.",
+  "loading": "Loading courses ...",
+  "backToCourses": "Back to courses",
+  "lessons": "Lessons",
+  "lessonsEmpty": "This course has no lessons yet.",
+  "courseNotFound": "Course not found."
+}

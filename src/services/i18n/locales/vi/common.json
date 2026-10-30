@@ -1,4 +1,5 @@
 {
+  "app-name": "SQL Hub",
   "app-name": "Boilerplate",
   "loading": "Đang tải ...",
   "close": "Đóng",
@@ -8,10 +9,24 @@
     "signUp": "Đăng ký",
     "profile": "Hồ sơ",
     "users": "Người dùng",
+    "courses": "Khóa học",
     "logout": "Đăng xuất"
   },
   "formInputs": {
     "avatarInput": {
+      "dropzoneText": "Kéo ảnh vào đây ...",
+      "dragAndDrop": "Hoặc kéo thả ảnh vào đây",
+      "selectFile": "Chọn ảnh"
+    },
+    "multipleImageInput": {
+      "dropzoneText": "Kéo ảnh vào đây ...",
+      "dragAndDrop": "Hoặc kéo thả các ảnh vào đây",
+      "selectFile": "Chọn ảnh"
+    },
+    "singleImageInput": {
+      "dropzoneText": "Kéo ảnh vào đây ...",
+      "dragAndDrop": "Hoặc kéo thả ảnh vào đây",
+      "selectFile": "Chọn ảnh"
       "dropzoneText": "Kéo thả ảnh vào đây ...",
       "dragAndDrop": "Hoặc kéo thả ảnh vào đây",
       "selectFile": "Chọn một ảnh"
@@ -29,6 +44,9 @@
   },
   "leavePage": {
     "title": "Rời khỏi trang này?",
+    "message": "Những thay đổi bạn đã thực hiện có thể không được lưu",
+    "stay": "Ở lại trang",
+    "leave": "Rời khỏi trang"
     "message": "Các thay đổi bạn đã thực hiện có thể không được lưu",
     "stay": "Ở lại trang",
     "leave": "Rời trang"
@@ -36,6 +54,13 @@
   "auth": {
     "facebook": {
       "action": "Đăng nhập với Facebook"
+    },
+    "github": {
+      "action": "Đăng nhập với GitHub",
+      "errors": {
+        "popupBlocked": "Vui lòng cho phép cửa sổ bật lên để đăng nhập bằng GitHub.",
+        "failed": "Đăng nhập GitHub thất bại. Vui lòng thử lại."
+      }
     }
   }
 }

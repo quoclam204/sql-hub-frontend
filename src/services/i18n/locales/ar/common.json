@@ -1,5 +1,5 @@
 {
-  "app-name": "Boilerplate",
+  "app-name": "SQL Hub",
   "loading": "جارٍ التحميل ...",
   "close": "إغلاق",
   "navigation": {
@@ -8,6 +8,7 @@
     "signUp": "إنشاء حساب",
     "profile": "الملف الشخصي",
     "users": "المستخدمون",
+    "courses": "الدورات",
     "logout": "تسجيل الخروج"
   },
   "formInputs": {
@@ -36,6 +37,13 @@
   "auth": {
     "facebook": {
       "action": "تسجيل الدخول عبر فيسبوك"
+    },
+    "github": {
+      "action": "المتابعة باستخدام GitHub",
+      "errors": {
+        "popupBlocked": "يرجى السماح بالنوافذ المنبثقة لتسجيل الدخول باستخدام GitHub.",
+        "failed": "تعذر تسجيل الدخول باستخدام GitHub. حاول مرة أخرى."
+      }
     }
   }
 }
