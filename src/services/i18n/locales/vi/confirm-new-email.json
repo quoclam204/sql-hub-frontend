@@ -1,4 +1,7 @@
 {
+  "title": "Xác nhận email mới",
+  "emailConfirmed": "Email đã được thay đổi!",
+  "emailConfirmFailed": "Đổi địa chỉ email thất bại!"
   "title": "Xác nhận Email mới",
   "emailConfirmed": "Email đã được thay đổi!",
   "emailConfirmFailed": "Thay đổi địa chỉ email thất bại!"

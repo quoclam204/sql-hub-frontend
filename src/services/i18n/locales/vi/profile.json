@@ -37,6 +37,7 @@
       "validation": {
         "required": "Email là bắt buộc",
         "email": "Email phải hợp lệ",
+        "currentEmail": "Email mới phải khác email hiện tại",
         "currentEmail": "Email phải khác với email hiện tại",
         "server": {
           "emailExists": "Email đã được sử dụng"
@@ -54,6 +55,9 @@
       "label": "Mật khẩu cũ",
       "validation": {
         "required": "Mật khẩu cũ là bắt buộc",
+        "min": "Mật khẩu cũ phải có ít nhất 6 ký tự",
+        "server": {
+          "incorrectOldPassword": "Mật khẩu cũ không hợp lệ"
         "min": "Mật khẩu cũ phải dài ít nhất 6 ký tự",
         "server": {
           "incorrectOldPassword": "Mật khẩu cũ không đúng"
@@ -64,6 +68,7 @@
       "label": "Mật khẩu mới",
       "validation": {
         "required": "Mật khẩu mới là bắt buộc",
+        "min": "Mật khẩu mới phải có ít nhất 6 ký tự"
         "min": "Mật khẩu mới phải dài ít nhất 6 ký tự"
       }
     },
@@ -77,6 +82,7 @@
   },
   "alerts": {
     "email": {
+      "success": "Yêu cầu đổi email đã được gửi tới địa chỉ email mới. Vui lòng kiểm tra email và nhấp vào liên kết xác nhận."
       "success": "Yêu cầu thay đổi email đã được gửi đến địa chỉ email mới của bạn. Vui lòng kiểm tra email và nhấp vào liên kết để xác nhận thay đổi."
     },
     "password": {

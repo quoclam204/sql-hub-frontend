@@ -1,0 +1,12 @@
+{
+  "title": "课程",
+  "description": "循序渐进的 SQL 学习路径，包含课程和实战练习。",
+  "lessonsCount": "{{count}} 节课",
+  "empty": "暂无课程。",
+  "error": "加载课程失败，请重试。",
+  "loading": "正在加载课程 ...",
+  "backToCourses": "返回课程列表",
+  "lessons": "课程列表",
+  "lessonsEmpty": "该课程暂无课时。",
+  "courseNotFound": "未找到课程。"
+}

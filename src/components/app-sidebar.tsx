@@ -170,6 +170,16 @@ function AppSidebar() {
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 )}
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname.includes("/courses")}
+                  >
+                    <Link href="/courses">
+                      {t("common:navigation.courses")}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
 
                 {isAdmin && (
                   <>

@@ -34,10 +34,8 @@ export default async function Home(props: Props) {
               components={[
                 <a
                   key="1"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-primary underline-offset-4 underline"
-                  href="https://github.com/brocoders/extensive-react-boilerplate/blob/main/docs/README.md"
+                  href={`/${params.language}/courses`}
                 >
                   {}
                 </a>,

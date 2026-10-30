@@ -31,6 +31,7 @@
       "label": "Mật khẩu",
       "validation": {
         "required": "Mật khẩu là bắt buộc",
+        "min": "Mật khẩu phải có ít nhất 6 ký tự",
         "min": "Mật khẩu phải dài ít nhất 6 ký tự",
         "server": {
           "incorrectPassword": "Mật khẩu không hợp lệ"
@@ -39,6 +40,9 @@
     },
     "policy": {
       "label": "Chính sách bảo mật",
+      "agreement": "Tôi đã đọc và đồng ý với ",
+      "validation": {
+        "required": "Bạn cần đồng ý với Chính sách bảo mật"
       "agreement": "Tôi đã đọc và chấp nhận ",
       "validation": {
         "required": "Cần đồng ý với Chính sách bảo mật"

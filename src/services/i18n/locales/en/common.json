@@ -1,5 +1,5 @@
 {
-  "app-name": "Boilerplate",
+  "app-name": "SQL Hub",
   "loading": "Loading ...",
   "close": "Close",
   "navigation": {
@@ -14,6 +14,7 @@
     "labs": "SQL Labs",
     "bulkImport": "Bulk Import",
     "statistics": "Statistics",
+    "courses": "Courses",
     "logout": "Logout"
   },
   "formInputs": {
@@ -42,6 +43,13 @@
   "auth": {
     "facebook": {
       "action": "Login with Facebook"
+    },
+    "github": {
+      "action": "Continue with GitHub",
+      "errors": {
+        "popupBlocked": "Please allow popups to sign in with GitHub.",
+        "failed": "GitHub sign-in failed. Please try again."
+      }
     }
   }
 }
