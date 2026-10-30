@@ -1,4 +1,36 @@
 {
   "title": "Admin Panel",
-  "description": "Welcome to the admin panel."
+  "description": "Welcome to the SQL Hub management portal. Choose an area to manage.",
+  "cards": {
+    "users": {
+      "title": "User Management",
+      "description": "View, filter, manage roles, and edit platform accounts.",
+      "action": "Manage Users"
+    },
+    "lessons": {
+      "title": "Lesson Management",
+      "description": "Create, edit, organize courses, and update bilingual markdown theory.",
+      "action": "Manage Lessons"
+    },
+    "quizzes": {
+      "title": "Quiz Questions",
+      "description": "Manage multiple choice questions, options, and explanations in vi and en.",
+      "action": "Manage Quizzes"
+    },
+    "labs": {
+      "title": "SQL Practice Labs",
+      "description": "Configure interactive SQL labs, expected query solutions, and datasets.",
+      "action": "Manage Labs"
+    },
+    "bulkImport": {
+      "title": "Bulk Import Content",
+      "description": "Bulk import lessons, quiz questions, and SQL practice labs from JSON or Markdown format.",
+      "action": "Go to Bulk Import"
+    },
+    "statistics": {
+      "title": "Platform Statistics",
+      "description": "Track learner counts, SQL lab pass rates, and learning progress metrics.",
+      "action": "View Statistics"
+    }
+  }
 }

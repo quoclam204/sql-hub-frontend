@@ -5,10 +5,16 @@
   "close": "Đóng",
   "navigation": {
     "home": "Trang chủ",
+    "dashboard": "Bảng điều khiển",
     "signIn": "Đăng nhập",
     "signUp": "Đăng ký",
     "profile": "Hồ sơ",
     "users": "Người dùng",
+    "lessons": "Bài học",
+    "quizQuestions": "Câu hỏi trắc nghiệm",
+    "labs": "Bài thực hành SQL",
+    "bulkImport": "Nhập dữ liệu hàng loạt",
+    "statistics": "Thống kê",
     "courses": "Khóa học",
     "logout": "Đăng xuất"
   },

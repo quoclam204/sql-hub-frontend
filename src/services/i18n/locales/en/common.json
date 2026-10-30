@@ -4,10 +4,16 @@
   "close": "Close",
   "navigation": {
     "home": "Home",
+    "dashboard": "Dashboard",
     "signIn": "Sign In",
     "signUp": "Sign Up",
     "profile": "Profile",
     "users": "Users",
+    "lessons": "Lessons",
+    "quizQuestions": "Quiz Questions",
+    "labs": "SQL Labs",
+    "bulkImport": "Bulk Import",
+    "statistics": "Statistics",
     "courses": "Courses",
     "logout": "Logout"
   },

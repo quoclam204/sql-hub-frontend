@@ -1,0 +1,40 @@
+{
+  "title": "Thống kê quản trị viên",
+  "subtitle": "Tổng hợp số liệu học viên, tỷ lệ vượt qua bài thực hành SQL và tiến độ học tập trên toàn hệ thống.",
+  "refresh": "Làm mới dữ liệu",
+  "overview": {
+    "title": "Chỉ số tổng quan",
+    "totalLearners": "Tổng số học viên",
+    "activeLearners": "Học viên hoạt động",
+    "activeLearnersDesc": "Đã tham gia học bài, làm trắc nghiệm hoặc nộp bài lab",
+    "labPassRate": "Tỷ lệ pass bài lab",
+    "labPassRateDesc": "Tỷ lệ lượt nộp thành công trên tổng lượt nộp",
+    "learnerPassRate": "Tỷ lệ học viên pass",
+    "learnerPassRateDesc": "Tỷ lệ học viên vượt qua ít nhất 1 bài lab",
+    "totalSubmissions": "Tổng lượt nộp lab",
+    "passedSubmissions": "Lượt nộp thành công",
+    "lessonsCompleted": "Lượt hoàn thành bài học",
+    "lessonsCompletedDesc": "Tổng số bài học đã được học viên hoàn thành",
+    "totalLessons": "Tổng số bài học",
+    "totalLabs": "Tổng số bài lab",
+    "quizAttempts": "Lượt làm trắc nghiệm",
+    "averageQuizScore": "Điểm trắc nghiệm TB"
+  },
+  "labsTable": {
+    "title": "Thống kê chi tiết từng bài thực hành SQL",
+    "description": "Số liệu lượt nộp, tỷ lệ đạt và thời gian chạy trung bình theo từng bài lab.",
+    "colLabId": "ID",
+    "colTitle": "Tên bài thực hành",
+    "colSubmissions": "Tổng lượt nộp",
+    "colPassed": "Lượt đạt",
+    "colPassRate": "Tỷ lệ đạt",
+    "colAvgRuntime": "Thời gian chạy TB",
+    "empty": "Chưa có bài thực hành nào trong hệ thống.",
+    "noSubmissions": "Chưa có lượt nộp"
+  },
+  "status": {
+    "loading": "Đang tải dữ liệu thống kê...",
+    "error": "Không thể tải dữ liệu thống kê. Vui lòng thử lại.",
+    "retry": "Thử lại"
+  }
+}

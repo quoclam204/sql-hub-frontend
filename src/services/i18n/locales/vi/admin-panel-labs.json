@@ -1,0 +1,52 @@
+{
+  "title": "Quản lý phòng thực hành SQL",
+  "description": "Tạo mới, chỉnh sửa, cấu hình các bài tập thực hành SQL tương tác, câu lệnh truy vấn mẫu và bộ dữ liệu.",
+  "actions": {
+    "add": "Thêm bài lab mới",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "save": "Lưu bài lab",
+    "cancel": "Hủy"
+  },
+  "table": {
+    "id": "Mã",
+    "titleVi": "Tiêu đề (VI)",
+    "titleEn": "Tiêu đề (EN)",
+    "dataset": "Bộ dữ liệu (Dataset)",
+    "lesson": "Bài học liên kết",
+    "orderSensitive": "Yêu cầu thứ tự dòng",
+    "actions": "Thao tác",
+    "noData": "Không tìm thấy bài thực hành nào.",
+    "yes": "Có",
+    "no": "Không"
+  },
+  "form": {
+    "addTitle": "Thêm bài lab mới",
+    "editTitle": "Chỉnh sửa bài lab",
+    "dataset": "Chọn bộ dữ liệu (Dataset)",
+    "lesson": "Bài học liên kết (Tùy chọn)",
+    "noLesson": "Không liên kết (Lab độc lập)",
+    "expectedQuery": "Câu truy vấn mẫu (Đáp án chuẩn)",
+    "expectedQueryHelp": "Bắt buộc bắt đầu bằng SELECT hoặc WITH để bảo đảm an toàn hệ thống.",
+    "orderSensitive": "So sánh nghiêm ngặt thứ tự dòng",
+    "orderSensitiveHelp": "Bật nếu thứ tự các dòng kết quả bắt buộc phải khớp hoàn toàn với đáp án.",
+    "titleVi": "Tiêu đề bài lab (Tiếng Việt)",
+    "descriptionVi": "Yêu cầu đề bài (Tiếng Việt)",
+    "hintVi": "Gợi ý tư duy (Tiếng Việt)",
+    "titleEn": "Tiêu đề bài lab (Tiếng Anh)",
+    "descriptionEn": "Yêu cầu đề bài (Tiếng Anh)",
+    "hintEn": "Gợi ý tư duy (Tiếng Anh)"
+  },
+  "confirm": {
+    "deleteTitle": "Xóa bài lab",
+    "deleteMessage": "Bạn có chắc chắn muốn xóa bài lab này không? Hành động này không thể hoàn tác.",
+    "confirmBtn": "Xóa bài lab"
+  },
+  "alerts": {
+    "createSuccess": "Đã tạo bài lab thành công.",
+    "updateSuccess": "Đã cập nhật bài lab thành công.",
+    "deleteSuccess": "Đã xóa bài lab thành công.",
+    "error": "Đã xảy ra lỗi khi lưu bài lab.",
+    "queryValidationError": "Câu truy vấn mẫu bắt buộc phải bắt đầu bằng SELECT hoặc WITH để bảo mật."
+  }
+}
