@@ -3,6 +3,7 @@
   "table": {
     "column1": "ID",
     "column2": "Họ tên",
+    "column2": "Tên",
     "column3": "Email",
     "column4": "Vai trò"
   },
@@ -21,6 +22,7 @@
   "filter": {
     "actions": {
       "filter": "Lọc",
+      "filter": "Bộ lọc",
       "apply": "Áp dụng"
     },
     "inputs": {
@@ -29,6 +31,7 @@
         "options": {
           "1": "Quản trị viên",
           "2": "Học viên"
+          "2": "Người dùng"
         }
       }
     }

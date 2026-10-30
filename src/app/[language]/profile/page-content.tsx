@@ -11,6 +11,12 @@ function Profile() {
   const { t } = useTranslation("profile");
   const initials = (user?.firstName?.[0] ?? "") + (user?.lastName?.[0] ?? "");
 
+  const getLanguageLabel = (locale?: string) => {
+    if (locale === "vi") return t("profile:languages.vi");
+    if (locale === "en") return t("profile:languages.en");
+    return locale ? locale.toUpperCase() : t("profile:languages.vi");
+  };
+
   return (
     <div className="mx-auto w-full max-w-xl px-4">
       <div className="flex gap-6 pt-6">
@@ -28,11 +34,19 @@ function Profile() {
             {user?.firstName} {user?.lastName}
           </h1>
           <p
-            className="mb-4 text-xl text-muted-foreground"
+            className="mb-2 text-xl text-muted-foreground"
             data-testid="user-email"
           >
             {user?.email}
           </p>
+          <div className="mb-4" data-testid="user-language">
+            <span className="text-sm font-medium text-muted-foreground">
+              {t("profile:languages.label")}:{" "}
+            </span>
+            <span className="text-sm font-semibold">
+              {getLanguageLabel(user?.locale)}
+            </span>
+          </div>
           <div>
             <Button asChild data-testid="edit-profile">
               <Link href="/profile/edit">{t("profile:actions.edit")}</Link>

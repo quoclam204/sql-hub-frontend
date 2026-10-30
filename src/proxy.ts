@@ -37,16 +37,14 @@ export function proxy(req: NextRequest) {
     );
   }
 
-  if (req.headers.has("referer")) {
-    const refererUrl = new URL(req.headers.get("referer") ?? "");
-    const languageInReferer = languages.find((l) =>
-      refererUrl.pathname.startsWith(`/${l}`)
-    );
-    const response = NextResponse.next();
-    if (languageInReferer) response.cookies.set(cookieName, languageInReferer);
+  const languageInPath = languages.find((loc) =>
+    req.nextUrl.pathname.startsWith(`/${loc}`)
+  );
 
-    return response;
+  const response = NextResponse.next();
+  if (languageInPath && req.cookies.get(cookieName)?.value !== languageInPath) {
+    response.cookies.set(cookieName, languageInPath);
   }
 
-  return NextResponse.next();
+  return response;
 }

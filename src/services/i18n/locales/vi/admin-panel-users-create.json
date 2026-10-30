@@ -35,6 +35,7 @@
       "options": {
         "1": "Quản trị viên",
         "2": "Học viên"
+        "2": "Người dùng"
       }
     },
     "password": {
@@ -42,6 +43,7 @@
       "validation": {
         "required": "Mật khẩu là bắt buộc",
         "min": "Mật khẩu phải có ít nhất 6 ký tự"
+        "min": "Mật khẩu phải dài ít nhất 6 ký tự"
       }
     },
     "passwordConfirmation": {
@@ -52,6 +54,7 @@
       }
     },
     "<system>": "Do not remove this property"
+    "<system>": "Không xóa thuộc tính này"
   },
   "alerts": {
     "user": {

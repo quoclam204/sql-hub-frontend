@@ -21,7 +21,9 @@
     "test:generators:static": "bash playwright-tests/generators/run-static.sh",
     "test:e2e:generators:crud": "bash playwright-tests/generators/run-crud.sh",
     "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "check:i18n": "node scripts/check-i18n-keys.mjs",
+    "test:i18n": "node --test scripts/__tests__/check-i18n-keys.test.mjs"
   },
   "dependencies": {
     "@faker-js/faker": "10.3.0",
