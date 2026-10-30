@@ -9,7 +9,9 @@ test.describe("Admin Bulk Content Import (FR-ADMIN-03) - Admin Access", () => {
     await loginAsAdmin(page);
   });
 
-  test("should display bulk import card on admin panel home", async ({ page }) => {
+  test("should display bulk import card on admin panel home", async ({
+    page,
+  }) => {
     await page.goto("/en/admin-panel");
     await page.waitForURL(/\/admin-panel/);
 
@@ -52,7 +54,9 @@ test.describe("Admin Bulk Content Import (FR-ADMIN-03) - Admin Access", () => {
     expect(value.length).toBeGreaterThan(10);
   });
 
-  test("should clear editor content when clear button is clicked", async ({ page }) => {
+  test("should clear editor content when clear button is clicked", async ({
+    page,
+  }) => {
     await page.goto("/en/admin-panel/bulk-import");
     await page.waitForURL(/\/admin-panel\/bulk-import/);
 

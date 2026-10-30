@@ -35,6 +35,7 @@ const languageToCode: Record<LanguageCode, string> = {
   fr: "fr_FR",
   hi: "hi_IN",
   uk: "uk_UA",
+  vi: "vi_VN",
   zh: "zh_CN",
 };
 
