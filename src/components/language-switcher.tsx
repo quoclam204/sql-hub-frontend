@@ -11,6 +11,7 @@ import {
 
 const languages = [
   { code: "en", label: "English" },
+  { code: "vi", label: "Tiếng Việt" },
   { code: "ar", label: "العربية" },
   { code: "es", label: "Español" },
   { code: "fr", label: "Français" },

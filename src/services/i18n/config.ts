@@ -1,6 +1,7 @@
 export const fallbackLanguage = "en" as const;
 export const languages = [
   fallbackLanguage,
+  "vi",
   "ar",
   "es",
   "fr",

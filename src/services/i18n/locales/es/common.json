@@ -1,5 +1,5 @@
 {
-  "app-name": "Boilerplate",
+  "app-name": "SQL Hub",
   "loading": "Cargando ...",
   "close": "Cerrar",
   "navigation": {
@@ -8,6 +8,7 @@
     "signUp": "Crear cuenta",
     "profile": "Perfil",
     "users": "Usuarios",
+    "courses": "Cursos",
     "logout": "Cerrar sesión"
   },
   "formInputs": {
@@ -36,6 +37,13 @@
   "auth": {
     "facebook": {
       "action": "Iniciar sesión con Facebook"
+    },
+    "github": {
+      "action": "Continuar con GitHub",
+      "errors": {
+        "popupBlocked": "Permite las ventanas emergentes para iniciar sesión con GitHub.",
+        "failed": "No se pudo iniciar sesión con GitHub. Inténtalo de nuevo."
+      }
     }
   }
 }

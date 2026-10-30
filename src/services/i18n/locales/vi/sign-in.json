@@ -1,0 +1,32 @@
+{
+  "title": "Đăng nhập",
+  "actions": {
+    "submit": "Đăng nhập",
+    "createAccount": "Tạo tài khoản",
+    "forgotPassword": "Quên mật khẩu?"
+  },
+  "inputs": {
+    "email": {
+      "label": "Email",
+      "validation": {
+        "required": "Email là bắt buộc",
+        "invalid": "Email không hợp lệ",
+        "server": {
+          "emailNotExists": "Email không tồn tại",
+          "notFound": "Email không tồn tại"
+        }
+      }
+    },
+    "password": {
+      "label": "Mật khẩu",
+      "validation": {
+        "required": "Mật khẩu là bắt buộc",
+        "min": "Mật khẩu phải có ít nhất 6 ký tự",
+        "server": {
+          "incorrectPassword": "Mật khẩu không hợp lệ"
+        }
+      }
+    }
+  },
+  "or": "HOẶC"
+}

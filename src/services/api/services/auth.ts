@@ -51,6 +51,29 @@ export function useAuthGoogleLoginService() {
   );
 }
 
+export type AuthGithubLoginRequest = {
+  accessToken: string;
+};
+
+export type AuthGithubLoginResponse = Tokens & {
+  user: User;
+};
+
+export function useAuthGithubLoginService() {
+  const fetchBase = useFetch();
+
+  return useCallback(
+    (data: AuthGithubLoginRequest, requestConfig?: RequestConfigType) => {
+      return fetchBase(`${API_URL}/v1/auth/github/login`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        ...requestConfig,
+      }).then(wrapperFetchJsonResponse<AuthGithubLoginResponse>);
+    },
+    [fetchBase]
+  );
+}
+
 export type AuthFacebookLoginRequest = {
   accessToken: string;
 };

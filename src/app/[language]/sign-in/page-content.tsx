@@ -15,6 +15,7 @@ import { useTranslation } from "@/services/i18n/client";
 import SocialAuth from "@/services/social-auth/social-auth";
 import { isGoogleAuthEnabled } from "@/services/social-auth/google/google-config";
 import { isFacebookAuthEnabled } from "@/services/social-auth/facebook/facebook-config";
+import { isGithubAuthEnabled } from "@/services/social-auth/github/github-config";
 import { IS_SIGN_UP_ENABLED } from "@/services/auth/config";
 
 type SignInFormData = {
@@ -147,7 +148,11 @@ function Form() {
               )}
             </div>
 
-            {[isGoogleAuthEnabled, isFacebookAuthEnabled].some(Boolean) && (
+            {[
+              isGoogleAuthEnabled,
+              isGithubAuthEnabled,
+              isFacebookAuthEnabled,
+            ].some(Boolean) && (
               <div className="col-span-12">
                 <div className="mb-4 flex items-center gap-2">
                   <Separator className="flex-1" />
