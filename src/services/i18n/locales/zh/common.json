@@ -1,5 +1,5 @@
 {
-  "app-name": "Boilerplate",
+  "app-name": "SQL Hub",
   "loading": "加载中 ...",
   "close": "关闭",
   "navigation": {
@@ -8,6 +8,7 @@
     "signUp": "注册",
     "profile": "个人资料",
     "users": "用户",
+    "courses": "课程",
     "logout": "退出登录"
   },
   "formInputs": {
@@ -36,6 +37,13 @@
   "auth": {
     "facebook": {
       "action": "使用 Facebook 登录"
+    },
+    "github": {
+      "action": "使用 GitHub 继续",
+      "errors": {
+        "popupBlocked": "请允许弹出窗口以使用 GitHub 登录。",
+        "failed": "GitHub 登录失败，请重试。"
+      }
     }
   }
 }

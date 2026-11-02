@@ -1,0 +1,50 @@
+{
+  "title": "Quiz Questions Management",
+  "description": "Create, edit, organize and manage multiple-choice questions with bilingual translations and options.",
+  "actions": {
+    "add": "Add New Question",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save Question",
+    "cancel": "Cancel",
+    "filterByQuiz": "Filter by Quiz",
+    "allQuizzes": "All Quizzes",
+    "addOption": "Add Answer Option",
+    "removeOption": "Remove"
+  },
+  "table": {
+    "order": "Order",
+    "quiz": "Quiz",
+    "questionVi": "Question (VI)",
+    "questionEn": "Question (EN)",
+    "optionsCount": "Options",
+    "actions": "Actions",
+    "noData": "No quiz questions found."
+  },
+  "form": {
+    "addTitle": "Create New Quiz Question",
+    "editTitle": "Edit Quiz Question",
+    "quiz": "Select Quiz",
+    "order": "Display Order",
+    "questionVi": "Question Text (Vietnamese)",
+    "explanationVi": "Explanation (Vietnamese)",
+    "questionEn": "Question Text (English)",
+    "explanationEn": "Explanation (English)",
+    "optionsSection": "Answer Choices",
+    "optionViPlaceholder": "Option in Vietnamese",
+    "optionEnPlaceholder": "Option in English",
+    "correctAnswer": "Correct Answer"
+  },
+  "confirm": {
+    "deleteTitle": "Delete Quiz Question",
+    "deleteMessage": "Are you sure you want to delete this question? Its options will also be removed.",
+    "confirmBtn": "Yes, Delete"
+  },
+  "alerts": {
+    "createSuccess": "Quiz question created successfully.",
+    "updateSuccess": "Quiz question updated successfully.",
+    "deleteSuccess": "Quiz question deleted successfully.",
+    "error": "An error occurred while saving the question.",
+    "optionValidationError": "Please provide at least 2 options and select exactly one correct answer."
+  }
+}

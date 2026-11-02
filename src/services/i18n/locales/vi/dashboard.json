@@ -1,0 +1,36 @@
+{
+  "title": "Bảng điều khiển học tập",
+  "subtitle": "Theo dõi tiến độ học tập qua các bài học, bài trắc nghiệm và phòng thực hành SQL.",
+  "metrics": {
+    "completedLessons": {
+      "title": "Bài học đã hoàn thành",
+      "description": "Số bài học đã hoàn thành trên tổng số bài",
+      "of": "trên"
+    },
+    "quizScore": {
+      "title": "Điểm trắc nghiệm",
+      "averageScore": "Điểm trung bình",
+      "highestScore": "Điểm cao nhất",
+      "totalAttempts": "Lượt làm bài",
+      "completedQuizzes": "Số bài trắc nghiệm",
+      "noAttempts": "Chưa làm bài trắc nghiệm nào"
+    },
+    "passedLabs": {
+      "title": "Bài thực hành (Lab) đã đạt",
+      "description": "Bài thực hành SQL tương tác đã vượt qua",
+      "of": "trên",
+      "status": "Đã đạt"
+    }
+  },
+  "emptyState": {
+    "title": "Chào mừng bạn đến với SQL Hub!",
+    "description": "Bạn chưa bắt đầu bài học, bài trắc nghiệm hoặc bài lab nào. Hãy khám phá danh sách khóa học để bắt đầu lộ trình SQL ngay hôm nay.",
+    "action": "Xem danh sách khóa học"
+  },
+  "loading": "Đang tải tiến độ học tập...",
+  "error": {
+    "title": "Không thể tải tiến độ",
+    "description": "Đã xảy ra lỗi khi tải dữ liệu tiến độ học tập của bạn. Vui lòng thử lại.",
+    "retry": "Thử lại"
+  }
+}

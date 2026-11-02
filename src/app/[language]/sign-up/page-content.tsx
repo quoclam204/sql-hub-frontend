@@ -19,6 +19,8 @@ import { useTranslation } from "@/services/i18n/client";
 import SocialAuth from "@/services/social-auth/social-auth";
 import { isGoogleAuthEnabled } from "@/services/social-auth/google/google-config";
 import { isFacebookAuthEnabled } from "@/services/social-auth/facebook/facebook-config";
+import Cookies from "js-cookie";
+import { cookieName } from "@/services/i18n/config";
 
 type TPolicy = {
   id: string;
@@ -124,6 +126,9 @@ function Form() {
         tokenExpires: dataSignIn.tokenExpires,
       });
       setUser(dataSignIn.user);
+      if (dataSignIn.user?.locale) {
+        Cookies.set(cookieName, dataSignIn.user.locale, { path: "/" });
+      }
     }
   });
 

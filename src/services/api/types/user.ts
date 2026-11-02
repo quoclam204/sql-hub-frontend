@@ -4,6 +4,7 @@ import { Role } from "./role";
 export enum UserProviderEnum {
   EMAIL = "email",
   GOOGLE = "google",
+  GITHUB = "github",
 }
 
 export type User = {
@@ -15,4 +16,5 @@ export type User = {
   provider?: UserProviderEnum;
   socialId?: string;
   role?: Role;
+  locale?: string;
 };

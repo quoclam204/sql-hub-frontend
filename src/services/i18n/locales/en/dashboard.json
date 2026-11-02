@@ -1,0 +1,36 @@
+{
+  "title": "Learning Dashboard",
+  "subtitle": "Track your progress across courses, quizzes, and hands-on SQL labs.",
+  "metrics": {
+    "completedLessons": {
+      "title": "Completed Lessons",
+      "description": "Lessons finished out of total available",
+      "of": "of"
+    },
+    "quizScore": {
+      "title": "Quiz Performance",
+      "averageScore": "Average Score",
+      "highestScore": "Highest Score",
+      "totalAttempts": "Total Attempts",
+      "completedQuizzes": "Quizzes Completed",
+      "noAttempts": "No quizzes taken yet"
+    },
+    "passedLabs": {
+      "title": "Passed Labs",
+      "description": "Interactive SQL labs successfully solved",
+      "of": "of",
+      "status": "Passed"
+    }
+  },
+  "emptyState": {
+    "title": "Welcome to SQL Hub!",
+    "description": "You haven't started any lessons, quizzes, or labs yet. Explore our courses to begin your SQL journey.",
+    "action": "Browse Courses"
+  },
+  "loading": "Loading your progress...",
+  "error": {
+    "title": "Unable to load progress",
+    "description": "An error occurred while fetching your learning progress. Please try again.",
+    "retry": "Try Again"
+  }
+}

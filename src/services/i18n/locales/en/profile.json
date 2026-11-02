@@ -8,6 +8,11 @@
     "submit": "Save",
     "cancel": "Cancel"
   },
+  "languages": {
+    "label": "Preferred Language",
+    "vi": "Tiếng Việt",
+    "en": "English"
+  },
   "inputs": {
     "firstName": {
       "label": "First Name",
@@ -19,6 +24,12 @@
       "label": "Last Name",
       "validation": {
         "required": "Last Name is required"
+      }
+    },
+    "locale": {
+      "label": "Preferred Language",
+      "validation": {
+        "required": "Preferred Language is required"
       }
     },
     "email": {

@@ -114,6 +114,9 @@ function NavUser() {
             align="start"
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56"
           >
+            <DropdownMenuItem asChild data-testid="user-dashboard">
+              <Link href="/dashboard">{t("common:navigation.dashboard")}</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem asChild data-testid="user-profile">
               <Link href="/profile">{t("common:navigation.profile")}</Link>
             </DropdownMenuItem>
@@ -155,6 +158,29 @@ function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
 
+                {user && (
+                  <SidebarMenuItem>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={pathname.includes("/dashboard")}
+                    >
+                      <Link href="/dashboard" data-testid="nav-dashboard">
+                        {t("common:navigation.dashboard")}
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )}
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname.includes("/courses")}
+                  >
+                    <Link href="/courses">
+                      {t("common:navigation.courses")}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+
                 {isAdmin && (
                   <>
                     <SidebarMenuItem>
@@ -164,6 +190,73 @@ function AppSidebar() {
                       >
                         <Link href="/admin-panel/users">
                           {t("common:navigation.users")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/lessons")}
+                      >
+                        <Link
+                          href="/admin-panel/lessons"
+                          data-testid="nav-admin-lessons"
+                        >
+                          {t("common:navigation.lessons")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes(
+                          "/admin-panel/quiz-questions"
+                        )}
+                      >
+                        <Link
+                          href="/admin-panel/quiz-questions"
+                          data-testid="nav-admin-quizzes"
+                        >
+                          {t("common:navigation.quizQuestions")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/labs")}
+                      >
+                        <Link
+                          href="/admin-panel/labs"
+                          data-testid="nav-admin-labs"
+                        >
+                          {t("common:navigation.labs")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/bulk-import")}
+                      >
+                        <Link
+                          href="/admin-panel/bulk-import"
+                          data-testid="nav-admin-bulk-import"
+                        >
+                          {t("common:navigation.bulkImport")}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={pathname.includes("/admin-panel/statistics")}
+                      >
+                        <Link
+                          href="/admin-panel/statistics"
+                          data-testid="nav-admin-statistics"
+                        >
+                          {t("common:navigation.statistics")}
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>

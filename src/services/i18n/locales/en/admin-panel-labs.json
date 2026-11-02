@@ -1,0 +1,52 @@
+{
+  "title": "SQL Lab Management",
+  "description": "Create, edit, organize and configure interactive SQL practice labs, expected queries, and datasets.",
+  "actions": {
+    "add": "Add New Lab",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save Lab",
+    "cancel": "Cancel"
+  },
+  "table": {
+    "id": "ID",
+    "titleVi": "Title (VI)",
+    "titleEn": "Title (EN)",
+    "dataset": "Dataset",
+    "lesson": "Lesson",
+    "orderSensitive": "Order Sensitive",
+    "actions": "Actions",
+    "noData": "No SQL labs found.",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "form": {
+    "addTitle": "Create New SQL Lab",
+    "editTitle": "Edit SQL Lab",
+    "dataset": "Select Dataset",
+    "lesson": "Associated Lesson (Optional)",
+    "noLesson": "None (Independent Lab)",
+    "expectedQuery": "Expected SQL Solution Query",
+    "expectedQueryHelp": "Must be a valid SELECT query. Used to evaluate learner answers.",
+    "orderSensitive": "Strict Order Comparison",
+    "orderSensitiveHelp": "Check if row ordering in the output must match the solution exactly.",
+    "titleVi": "Lab Title (Vietnamese)",
+    "descriptionVi": "Task Instructions (Vietnamese)",
+    "hintVi": "Guidance Hint (Vietnamese)",
+    "titleEn": "Lab Title (English)",
+    "descriptionEn": "Task Instructions (English)",
+    "hintEn": "Guidance Hint (English)"
+  },
+  "confirm": {
+    "deleteTitle": "Delete SQL Lab",
+    "deleteMessage": "Are you sure you want to delete this SQL lab? This action cannot be undone.",
+    "confirmBtn": "Yes, Delete"
+  },
+  "alerts": {
+    "createSuccess": "SQL lab created successfully.",
+    "updateSuccess": "SQL lab updated successfully.",
+    "deleteSuccess": "SQL lab deleted successfully.",
+    "error": "An error occurred while saving the SQL lab.",
+    "queryValidationError": "The expected query must begin with SELECT or WITH for security."
+  }
+}

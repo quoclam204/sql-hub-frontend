@@ -1,5 +1,5 @@
 {
-  "app-name": "БОЙЛЕРПЛЕЙТ",
+  "app-name": "SQL Hub",
   "loading": "Завантаження...",
   "close": "Закрити",
   "navigation": {
@@ -8,6 +8,7 @@
     "signUp": "Зареєструватися",
     "profile": "Профіль",
     "users": "Користувачі",
+    "courses": "Курси",
     "logout": "Вийти"
   },
   "formInputs": {
@@ -36,6 +37,13 @@
   "auth": {
     "facebook": {
       "action": "Увійти через Facebook"
+    },
+    "github": {
+      "action": "Продовжити з GitHub",
+      "errors": {
+        "popupBlocked": "Дозвольте спливні вікна, щоб увійти через GitHub.",
+        "failed": "Не вдалося увійти через GitHub. Спробуйте ще раз."
+      }
     }
   }
 }

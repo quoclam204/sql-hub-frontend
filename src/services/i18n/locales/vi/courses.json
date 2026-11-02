@@ -1,0 +1,12 @@
+{
+  "title": "Khóa học",
+  "description": "Lộ trình học SQL từ cơ bản đến nâng cao, kèm bài học và bài thực hành.",
+  "lessonsCount": "{{count}} bài học",
+  "empty": "Chưa có khóa học nào.",
+  "error": "Không thể tải danh sách khóa học. Vui lòng thử lại.",
+  "loading": "Đang tải khóa học ...",
+  "backToCourses": "Quay lại danh sách khóa học",
+  "lessons": "Danh sách bài học",
+  "lessonsEmpty": "Khóa học này chưa có bài học.",
+  "courseNotFound": "Không tìm thấy khóa học."
+}

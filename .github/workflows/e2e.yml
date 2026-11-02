@@ -32,6 +32,8 @@ jobs:
         run: npm ci
       - name: Run lint
         run: npm run lint
+      - name: Check i18n key consistency
+        run: npm run check:i18n
       - name: Resolve Playwright version
         id: pw
         run: echo "version=$(node -e "console.log(require('@playwright/test/package.json').version)")" >> "$GITHUB_OUTPUT"

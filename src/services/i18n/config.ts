@@ -1,11 +1,13 @@
 export const fallbackLanguage = "en" as const;
 export const languages = [
   fallbackLanguage,
+  "vi",
   "ar",
   "es",
   "fr",
   "hi",
   "uk",
+  "vi",
   "zh",
 ] as const;
 export const defaultNamespace = "common";

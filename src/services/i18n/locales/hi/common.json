@@ -1,5 +1,5 @@
 {
-  "app-name": "Boilerplate",
+  "app-name": "SQL Hub",
   "loading": "लोड हो रहा है ...",
   "close": "बंद करें",
   "navigation": {
@@ -8,6 +8,7 @@
     "signUp": "साइन अप",
     "profile": "प्रोफ़ाइल",
     "users": "उपयोगकर्ता",
+    "courses": "पाठ्यक्रम",
     "logout": "लॉगआउट"
   },
   "formInputs": {
@@ -36,6 +37,13 @@
   "auth": {
     "facebook": {
       "action": "Facebook से लॉगिन करें"
+    },
+    "github": {
+      "action": "GitHub के साथ जारी रखें",
+      "errors": {
+        "popupBlocked": "GitHub से साइन इन करने के लिए कृपया पॉपअप की अनुमति दें।",
+        "failed": "GitHub साइन-इन विफल रहा। कृपया पुनः प्रयास करें।"
+      }
     }
   }
 }

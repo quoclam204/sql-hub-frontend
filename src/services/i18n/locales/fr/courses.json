@@ -1,0 +1,12 @@
+{
+  "title": "Cours",
+  "description": "Un parcours d'apprentissage SQL étape par étape avec des leçons et des exercices pratiques.",
+  "lessonsCount": "{{count}} leçons",
+  "empty": "Aucun cours disponible pour le moment.",
+  "error": "Impossible de charger les cours. Veuillez réessayer.",
+  "loading": "Chargement des cours ...",
+  "backToCourses": "Retour aux cours",
+  "lessons": "Leçons",
+  "lessonsEmpty": "Ce cours n'a pas encore de leçons.",
+  "courseNotFound": "Cours introuvable."
+}

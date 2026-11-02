@@ -1,0 +1,12 @@
+{
+  "title": "Cursos",
+  "description": "Una ruta de aprendizaje de SQL paso a paso con lecciones y práctica.",
+  "lessonsCount": "{{count}} lecciones",
+  "empty": "Aún no hay cursos disponibles.",
+  "error": "No se pudieron cargar los cursos. Inténtalo de nuevo.",
+  "loading": "Cargando cursos ...",
+  "backToCourses": "Volver a los cursos",
+  "lessons": "Lecciones",
+  "lessonsEmpty": "Este curso aún no tiene lecciones.",
+  "courseNotFound": "Curso no encontrado."
+}

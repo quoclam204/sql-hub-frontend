@@ -12,6 +12,7 @@
     "prepare": "is-ci || husky",
     "release": "release-it",
     "app:config": "node ./.install-scripts/index.js",
+    "gen:api": "node scripts/generate-api-types.mjs",
     "generate:resource": "hygen generate resource",
     "postgenerate:resource": "npm run lint -- --fix",
     "lint:fix": "eslint . --fix",
@@ -20,7 +21,9 @@
     "test:generators:static": "bash playwright-tests/generators/run-static.sh",
     "test:e2e:generators:crud": "bash playwright-tests/generators/run-crud.sh",
     "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "check:i18n": "node scripts/check-i18n-keys.mjs",
+    "test:i18n": "node --test scripts/__tests__/check-i18n-keys.test.mjs"
   },
   "dependencies": {
     "@faker-js/faker": "10.3.0",
@@ -95,6 +98,7 @@
     "husky": "9.1.7",
     "hygen": "6.2.11",
     "is-ci": "4.1.0",
+    "openapi-typescript": "^7.13.0",
     "prettier": "3.8.3",
     "release-it": "19.2.4",
     "storybook": "10.3.1",

@@ -1,0 +1,40 @@
+{
+  "title": "Admin Statistics",
+  "subtitle": "Aggregate platform metrics for learners, SQL lab pass rates, and learning progress.",
+  "refresh": "Refresh Data",
+  "overview": {
+    "title": "Overview Metrics",
+    "totalLearners": "Total Learners",
+    "activeLearners": "Active Learners",
+    "activeLearnersDesc": "Engaged in lessons, quizzes, or lab submissions",
+    "labPassRate": "Lab Pass Rate",
+    "labPassRateDesc": "Successful submissions over total submissions",
+    "learnerPassRate": "Learner Pass Rate",
+    "learnerPassRateDesc": "Learners who passed at least 1 SQL lab",
+    "totalSubmissions": "Total Lab Submissions",
+    "passedSubmissions": "Passed Submissions",
+    "lessonsCompleted": "Completed Lessons",
+    "lessonsCompletedDesc": "Total lesson completions recorded",
+    "totalLessons": "Total Lessons",
+    "totalLabs": "Total Labs",
+    "quizAttempts": "Quiz Attempts",
+    "averageQuizScore": "Avg Quiz Score"
+  },
+  "labsTable": {
+    "title": "SQL Practice Labs Breakdown",
+    "description": "Submission metrics, pass rates, and average runtime per lab.",
+    "colLabId": "ID",
+    "colTitle": "Lab Title",
+    "colSubmissions": "Submissions",
+    "colPassed": "Passed",
+    "colPassRate": "Pass Rate",
+    "colAvgRuntime": "Avg Runtime",
+    "empty": "No SQL labs found in the system.",
+    "noSubmissions": "No submissions yet"
+  },
+  "status": {
+    "loading": "Loading platform statistics...",
+    "error": "Failed to load statistics. Please try again.",
+    "retry": "Retry"
+  }
+}
