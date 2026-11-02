@@ -68,9 +68,11 @@ function DashboardContent() {
           <Skeleton className="h-9 w-64" />
           <Skeleton className="h-5 w-96" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <Skeleton className="h-44 w-full rounded-xl" />
           <Skeleton className="h-44 w-full rounded-xl" />
+          <Skeleton className="h-44 w-full rounded-xl" />
+
           <Skeleton className="h-44 w-full rounded-xl" />
         </div>
       </div>
