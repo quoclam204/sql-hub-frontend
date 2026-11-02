@@ -22,6 +22,34 @@
       "status": "Đã đạt"
     }
   },
+  "streak": {
+    "title": "Chuỗi ngày học liên tiếp",
+    "currentStreak": "Chuỗi ngày hiện tại",
+    "days": "ngày",
+    "day": "ngày",
+    "longestStreak": "Kỷ lục chuỗi dài nhất",
+    "totalActiveDays": "Tổng ngày học tập",
+    "activeToday": "Đã học hôm nay",
+    "inactiveToday": "Chưa học hôm nay",
+    "keepItUp": "Tuyệt vời! Tiếp tục duy trì chuỗi học tập nhé.",
+    "startToday": "Hãy học một bài học hoặc giải bài lab ngay hôm nay để duy trì chuỗi!"
+  },
+  "badges": {
+    "title": "Bộ sưu tập huy hiệu",
+    "subtitle": "Mở khóa các huy hiệu vinh danh khi hoàn thành các mục tiêu học tập và thử thách SQL.",
+    "unlockedCount": "Đã đạt {{unlocked}} / {{total}} huy hiệu",
+    "filterAll": "Tất cả",
+    "filterUnlocked": "Đã đạt",
+    "filterLocked": "Chưa đạt",
+    "unlockedOn": "Đạt được ngày",
+    "locked": "Chưa mở khóa",
+    "inProgress": "Tiến độ",
+    "categories": {
+      "milestone": "Cột mốc",
+      "streak": "Chuỗi học",
+      "mastery": "Thành thạo"
+    }
+  },
   "emptyState": {
     "title": "Chào mừng bạn đến với SQL Hub!",
     "description": "Bạn chưa bắt đầu bài học, bài trắc nghiệm hoặc bài lab nào. Hãy khám phá danh sách khóa học để bắt đầu lộ trình SQL ngay hôm nay.",

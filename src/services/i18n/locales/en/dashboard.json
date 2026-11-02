@@ -22,6 +22,34 @@
       "status": "Passed"
     }
   },
+  "streak": {
+    "title": "Learning Streak",
+    "currentStreak": "Current Streak",
+    "days": "days",
+    "day": "day",
+    "longestStreak": "Longest Streak",
+    "totalActiveDays": "Total Active Days",
+    "activeToday": "Active Today",
+    "inactiveToday": "Not Active Today",
+    "keepItUp": "Great job! Keep your daily learning streak going.",
+    "startToday": "Complete a lesson or solve a lab today to maintain your streak!"
+  },
+  "badges": {
+    "title": "Badge Collection",
+    "subtitle": "Unlock achievement badges as you complete learning milestones and SQL challenges.",
+    "unlockedCount": "Unlocked {{unlocked}} of {{total}} badges",
+    "filterAll": "All",
+    "filterUnlocked": "Unlocked",
+    "filterLocked": "Locked",
+    "unlockedOn": "Earned on",
+    "locked": "Locked",
+    "inProgress": "Progress",
+    "categories": {
+      "milestone": "Milestone",
+      "streak": "Streak",
+      "mastery": "Mastery"
+    }
+  },
   "emptyState": {
     "title": "Welcome to SQL Hub!",
     "description": "You haven't started any lessons, quizzes, or labs yet. Explore our courses to begin your SQL journey.",
