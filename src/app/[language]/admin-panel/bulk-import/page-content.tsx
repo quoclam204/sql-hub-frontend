@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition, useCallback, useEffect } from "react";
+import { useState, useTransition, useEffect } from "react";
 import { RoleEnum } from "@/services/api/types/role";
 import withPageRequiredAuth from "@/services/auth/with-page-required-auth";
 import { useTranslation } from "@/services/i18n/client";
@@ -11,6 +11,7 @@ import {
   BulkImportType,
   BulkImportFormat,
   BulkImportErrorItem,
+  BulkImportPreviewItem,
   BulkImportTemplates,
   usePostAdminBulkImportService,
   useGetAdminBulkImportTemplatesService,
@@ -49,7 +50,6 @@ import Loader2 from "lucide-react/dist/esm/icons/loader-2";
 import Trash2 from "lucide-react/dist/esm/icons/trash-2";
 import Eye from "lucide-react/dist/esm/icons/eye";
 import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
-import BookOpen from "lucide-react/dist/esm/icons/book-open";
 
 function AdminBulkImportContent() {
   const { t } = useTranslation("admin-panel-bulk-import");
@@ -64,8 +64,12 @@ function AdminBulkImportContent() {
   const [templates, setTemplates] = useState<BulkImportTemplates | null>(null);
 
   const [isPending, startTransition] = useTransition();
-  const [previewItems, setPreviewItems] = useState<any[] | null>(null);
-  const [validationErrors, setValidationErrors] = useState<BulkImportErrorItem[]>([]);
+  const [previewItems, setPreviewItems] = useState<
+    BulkImportPreviewItem[] | null
+  >(null);
+  const [validationErrors, setValidationErrors] = useState<
+    BulkImportErrorItem[]
+  >([]);
   const [importResult, setImportResult] = useState<{
     success: boolean;
     importedCount: number;
@@ -137,8 +141,16 @@ SELECT * FROM employees;`);
                   explanationVi: "SELECT là câu lệnh cơ bản.",
                   explanationEn: "SELECT is the fundamental command.",
                   options: [
-                    { optionTextVi: "SELECT", optionTextEn: "SELECT", isCorrect: true },
-                    { optionTextVi: "GET", optionTextEn: "GET", isCorrect: false },
+                    {
+                      optionTextVi: "SELECT",
+                      optionTextEn: "SELECT",
+                      isCorrect: true,
+                    },
+                    {
+                      optionTextVi: "GET",
+                      optionTextEn: "GET",
+                      isCorrect: false,
+                    },
                   ],
                 },
               ],
@@ -165,12 +177,14 @@ Explanation En: SELECT is the fundamental command.
                 {
                   datasetId: 1,
                   lessonId: 1,
-                  expectedQuery: "SELECT * FROM employees WHERE department_id = 1;",
+                  expectedQuery:
+                    "SELECT * FROM employees WHERE department_id = 1;",
                   orderSensitive: false,
                   titleVi: "Lọc nhân viên theo phòng ban",
                   titleEn: "Filter Employees by Department",
                   descriptionVi: "Viết truy vấn lọc nhân viên phòng ban 1.",
-                  descriptionEn: "Write a query to filter department 1 employees.",
+                  descriptionEn:
+                    "Write a query to filter department 1 employees.",
                   hintVi: "Dùng mệnh đề WHERE.",
                   hintEn: "Use WHERE clause.",
                 },
@@ -207,9 +221,13 @@ Dùng mệnh đề WHERE.`);
 
     let tpl = "";
     if (contentType === "lessons") {
-      tpl = format === "json" ? templates.lessons.json : templates.lessons.markdown;
+      tpl =
+        format === "json" ? templates.lessons.json : templates.lessons.markdown;
     } else if (contentType === "quiz-questions") {
-      tpl = format === "json" ? templates.quizQuestions.json : templates.quizQuestions.markdown;
+      tpl =
+        format === "json"
+          ? templates.quizQuestions.json
+          : templates.quizQuestions.markdown;
     } else {
       tpl = format === "json" ? templates.labs.json : templates.labs.markdown;
     }
@@ -334,9 +352,7 @@ Dùng mệnh đề WHERE.`);
         >
           {t("title")}
         </h1>
-        <p className="text-muted-foreground text-sm mt-1">
-          {t("description")}
-        </p>
+        <p className="text-muted-foreground text-sm mt-1">{t("description")}</p>
       </div>
 
       {/* Configuration Toolbar */}
@@ -358,7 +374,9 @@ Dùng mệnh đề WHERE.`);
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="lessons">{t("types.lessons")}</SelectItem>
-                <SelectItem value="quiz-questions">{t("types.quizQuestions")}</SelectItem>
+                <SelectItem value="quiz-questions">
+                  {t("types.quizQuestions")}
+                </SelectItem>
                 <SelectItem value="labs">{t("types.labs")}</SelectItem>
               </SelectContent>
             </Select>
@@ -375,12 +393,17 @@ Dùng mệnh đề WHERE.`);
                 setImportResult(null);
               }}
             >
-              <SelectTrigger id="import-format" data-testid="select-import-format">
+              <SelectTrigger
+                id="import-format"
+                data-testid="select-import-format"
+              >
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="json">{t("formats.json")}</SelectItem>
-                <SelectItem value="markdown">{t("formats.markdown")}</SelectItem>
+                <SelectItem value="markdown">
+                  {t("formats.markdown")}
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -558,8 +581,12 @@ Dùng mệnh đề WHERE.`);
             <Table data-testid="import-errors-table">
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-24">{t("errors.columns.row")}</TableHead>
-                  <TableHead className="w-48">{t("errors.columns.field")}</TableHead>
+                  <TableHead className="w-24">
+                    {t("errors.columns.row")}
+                  </TableHead>
+                  <TableHead className="w-48">
+                    {t("errors.columns.field")}
+                  </TableHead>
                   <TableHead>{t("errors.columns.message")}</TableHead>
                 </TableRow>
               </TableHeader>
@@ -604,7 +631,9 @@ Dùng mệnh đề WHERE.`);
             <Table data-testid="import-preview-table">
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-16">{t("preview.columns.index")}</TableHead>
+                  <TableHead className="w-16">
+                    {t("preview.columns.index")}
+                  </TableHead>
                   <TableHead>{t("preview.columns.identifier")}</TableHead>
                   <TableHead>{t("preview.columns.details")}</TableHead>
                 </TableRow>
@@ -612,7 +641,9 @@ Dùng mệnh đề WHERE.`);
               <TableBody>
                 {previewItems.map((item, idx) => (
                   <TableRow key={idx}>
-                    <TableCell className="font-medium text-xs">{idx + 1}</TableCell>
+                    <TableCell className="font-medium text-xs">
+                      {idx + 1}
+                    </TableCell>
                     <TableCell className="font-medium text-xs">
                       {item.slug ||
                         item.questionTextVi ||

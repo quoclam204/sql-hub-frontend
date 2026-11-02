@@ -130,18 +130,26 @@ test.describe("Admin Content Management (FR-ADMIN-02) - Non-Admin Access Control
     await login(studentEmail, studentPassword, page);
   });
 
-  test("should deny regular student access to admin lessons page", async ({ page }) => {
+  test("should deny regular student access to admin lessons page", async ({
+    page,
+  }) => {
     await page.goto("/en/admin-panel/lessons");
     // Regular learner should not see the admin content and should be redirected or see forbidden
     await expect(page.getByTestId("admin-lessons-title")).not.toBeVisible();
   });
 
-  test("should deny regular student access to admin quiz questions page", async ({ page }) => {
+  test("should deny regular student access to admin quiz questions page", async ({
+    page,
+  }) => {
     await page.goto("/en/admin-panel/quiz-questions");
-    await expect(page.getByTestId("admin-quiz-questions-title")).not.toBeVisible();
+    await expect(
+      page.getByTestId("admin-quiz-questions-title")
+    ).not.toBeVisible();
   });
 
-  test("should deny regular student access to admin labs page", async ({ page }) => {
+  test("should deny regular student access to admin labs page", async ({
+    page,
+  }) => {
     await page.goto("/en/admin-panel/labs");
     await expect(page.getByTestId("admin-labs-title")).not.toBeVisible();
   });

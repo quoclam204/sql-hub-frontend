@@ -1,5 +1,4 @@
 {
-  "app-name": "SQL Hub",
   "app-name": "Boilerplate",
   "loading": "Đang tải ...",
   "close": "Đóng",
@@ -30,19 +29,6 @@
       "selectFile": "Chọn ảnh"
     },
     "singleImageInput": {
-      "dropzoneText": "Kéo ảnh vào đây ...",
-      "dragAndDrop": "Hoặc kéo thả ảnh vào đây",
-      "selectFile": "Chọn ảnh"
-      "dropzoneText": "Kéo thả ảnh vào đây ...",
-      "dragAndDrop": "Hoặc kéo thả ảnh vào đây",
-      "selectFile": "Chọn một ảnh"
-    },
-    "multipleImageInput": {
-      "dropzoneText": "Kéo thả ảnh vào đây ...",
-      "dragAndDrop": "Hoặc kéo thả một số ảnh vào đây",
-      "selectFile": "Chọn một ảnh"
-    },
-    "singleImageInput": {
       "dropzoneText": "Kéo thả ảnh vào đây ...",
       "dragAndDrop": "Hoặc kéo thả một số ảnh vào đây",
       "selectFile": "Chọn một ảnh"
@@ -52,7 +38,7 @@
     "title": "Rời khỏi trang này?",
     "message": "Những thay đổi bạn đã thực hiện có thể không được lưu",
     "stay": "Ở lại trang",
-    "leave": "Rời khỏi trang"
+    "leave": "Rời khỏi trang",
     "message": "Các thay đổi bạn đã thực hiện có thể không được lưu",
     "stay": "Ở lại trang",
     "leave": "Rời trang"

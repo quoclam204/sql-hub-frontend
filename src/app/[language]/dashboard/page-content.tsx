@@ -33,7 +33,9 @@ function DashboardContent() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [progress, setProgress] = useState<LearnerProgressResponse | null>(null);
+  const [progress, setProgress] = useState<LearnerProgressResponse | null>(
+    null
+  );
 
   const loadProgress = useCallback(async () => {
     setIsLoading(true);
@@ -86,7 +88,9 @@ function DashboardContent() {
         <div className="flex flex-col items-center gap-4">
           <AlertCircle className="size-12 text-destructive" />
           <h2 className="text-2xl font-bold">{t("dashboard:error.title")}</h2>
-          <p className="text-muted-foreground">{error || t("dashboard:error.description")}</p>
+          <p className="text-muted-foreground">
+            {error || t("dashboard:error.description")}
+          </p>
           <Button
             onClick={loadProgress}
             className="flex items-center gap-2 mt-2"
@@ -107,7 +111,9 @@ function DashboardContent() {
 
   const lessonPercentage =
     progress.totalLessonsCount > 0
-      ? Math.round((progress.completedLessonsCount / progress.totalLessonsCount) * 100)
+      ? Math.round(
+          (progress.completedLessonsCount / progress.totalLessonsCount) * 100
+        )
       : 0;
 
   const labPercentage =
@@ -152,9 +158,7 @@ function DashboardContent() {
           </CardHeader>
           <CardContent>
             <Button asChild data-testid="dashboard-browse-courses">
-              <Link href="/">
-                {t("dashboard:emptyState.action")}
-              </Link>
+              <Link href="/">{t("dashboard:emptyState.action")}</Link>
             </Button>
           </CardContent>
         </Card>
@@ -184,7 +188,8 @@ function DashboardContent() {
                 {progress.completedLessonsCount}
               </span>
               <span className="text-sm text-muted-foreground">
-                {t("dashboard:metrics.completedLessons.of")} {progress.totalLessonsCount}
+                {t("dashboard:metrics.completedLessons.of")}{" "}
+                {progress.totalLessonsCount}
               </span>
             </div>
 
@@ -200,7 +205,8 @@ function DashboardContent() {
               {progress.completedLessonsCount > 0 ? (
                 <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
                   <CheckCircle2 className="size-3.5" />
-                  {lessonPercentage}% {t("dashboard:metrics.completedLessons.description")}
+                  {lessonPercentage}%{" "}
+                  {t("dashboard:metrics.completedLessons.description")}
                 </span>
               ) : (
                 t("dashboard:metrics.completedLessons.description")
@@ -240,7 +246,10 @@ function DashboardContent() {
             <div className="flex items-center gap-2 pt-1">
               <Badge variant="secondary" className="text-xs">
                 {t("dashboard:metrics.quizScore.highestScore")}:{" "}
-                <span className="font-semibold ms-1" data-testid="quiz-highest-score">
+                <span
+                  className="font-semibold ms-1"
+                  data-testid="quiz-highest-score"
+                >
                   {progress.quizStats.highestScore}
                 </span>
               </Badge>
@@ -296,7 +305,8 @@ function DashboardContent() {
               {progress.passedLabsCount > 0 ? (
                 <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
                   <CheckCircle2 className="size-3.5" />
-                  {labPercentage}% {t("dashboard:metrics.passedLabs.description")}
+                  {labPercentage}%{" "}
+                  {t("dashboard:metrics.passedLabs.description")}
                 </span>
               ) : (
                 t("dashboard:metrics.passedLabs.description")

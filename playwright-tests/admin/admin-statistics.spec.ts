@@ -42,9 +42,7 @@ test.describe("Admin Statistics (FR-ADMIN-04) - Admin Access", () => {
     await expect(page.getByTestId("value-quiz-score")).toBeVisible();
 
     // Per-lab statistics table
-    await expect(
-      page.getByTestId("admin-statistics-labs-table")
-    ).toBeVisible();
+    await expect(page.getByTestId("admin-statistics-labs-table")).toBeVisible();
   });
 
   test("should support refreshing statistics data on button click", async ({

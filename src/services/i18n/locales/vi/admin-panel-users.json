@@ -21,7 +21,6 @@
   },
   "filter": {
     "actions": {
-      "filter": "Lọc",
       "filter": "Bộ lọc",
       "apply": "Áp dụng"
     },
@@ -30,8 +29,8 @@
         "label": "Vai trò",
         "options": {
           "1": "Quản trị viên",
-          "2": "Học viên"
-          "2": "Người dùng"
+          "2": "Học viên",
+          "3": "Người dùng"
         }
       }
     }

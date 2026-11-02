@@ -1,6 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useForm, FormProvider, useFormState, Controller } from "react-hook-form";
+import {
+  useForm,
+  FormProvider,
+  useFormState,
+  Controller,
+} from "react-hook-form";
 import { useAuthPatchMeService } from "@/services/api/services/auth";
 import useAuthActions from "@/services/auth/use-auth-actions";
 import FormTextInput from "@/components/form/text-input/form-text-input";
@@ -258,10 +263,7 @@ function FormBasicInfo() {
                     <Label htmlFor="select-locale">
                       {t("profile:inputs.locale.label")}
                     </Label>
-                    <Select
-                      value={field.value}
-                      onValueChange={field.onChange}
-                    >
+                    <Select value={field.value} onValueChange={field.onChange}>
                       <SelectTrigger
                         id="select-locale"
                         data-testid="preferred-language"

@@ -9,17 +9,13 @@ import HTTP_CODES_ENUM from "@/services/api/types/http-codes";
 import {
   AdminQuizQuestionItem,
   AdminQuizItem,
-  AdminQuestionOptionItem,
   useGetAdminQuizQuestionsService,
   useGetAdminQuizzesService,
   usePostAdminQuizQuestionService,
   usePatchAdminQuizQuestionService,
   useDeleteAdminQuizQuestionService,
 } from "@/services/api/services/admin-content";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -78,7 +74,9 @@ function AdminQuizQuestionsContent() {
 
   // Form Dialog state
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingQuestionId, setEditingQuestionId] = useState<number | null>(null);
+  const [editingQuestionId, setEditingQuestionId] = useState<number | null>(
+    null
+  );
   const [quizId, setQuizId] = useState<number | "">("");
   const [order, setOrder] = useState<number>(1);
   const [questionTextVi, setQuestionTextVi] = useState("");
@@ -92,14 +90,18 @@ function AdminQuizQuestionsContent() {
 
   // Delete Confirm Dialog state
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-  const [deletingQuestionId, setDeletingQuestionId] = useState<number | null>(null);
+  const [deletingQuestionId, setDeletingQuestionId] = useState<number | null>(
+    null
+  );
 
   const loadData = useCallback(async () => {
     setIsLoading(true);
     try {
       const [quizzesRes, questionsRes] = await Promise.all([
         fetchQuizzes(),
-        fetchQuestions(selectedQuizId !== "all" ? Number(selectedQuizId) : undefined),
+        fetchQuestions(
+          selectedQuizId !== "all" ? Number(selectedQuizId) : undefined
+        ),
       ]);
 
       if (quizzesRes.status === HTTP_CODES_ENUM.OK && quizzesRes.data) {
@@ -311,13 +313,13 @@ function AdminQuizQuestionsContent() {
       <Card>
         <CardContent className="pt-6 flex items-center gap-4">
           <div className="w-full sm:w-72 space-y-1">
-            <Label htmlFor="quiz-filter" className="text-xs text-muted-foreground">
+            <Label
+              htmlFor="quiz-filter"
+              className="text-xs text-muted-foreground"
+            >
               {t("actions.filterByQuiz")}
             </Label>
-            <Select
-              value={selectedQuizId}
-              onValueChange={setSelectedQuizId}
-            >
+            <Select value={selectedQuizId} onValueChange={setSelectedQuizId}>
               <SelectTrigger id="quiz-filter" data-testid="select-filter-quiz">
                 <SelectValue placeholder={t("actions.allQuizzes")} />
               </SelectTrigger>
@@ -354,8 +356,12 @@ function AdminQuizQuestionsContent() {
                   <TableHead className="w-48">{t("table.quiz")}</TableHead>
                   <TableHead>{t("table.questionVi")}</TableHead>
                   <TableHead>{t("table.questionEn")}</TableHead>
-                  <TableHead className="w-24 text-center">{t("table.optionsCount")}</TableHead>
-                  <TableHead className="text-end">{t("table.actions")}</TableHead>
+                  <TableHead className="w-24 text-center">
+                    {t("table.optionsCount")}
+                  </TableHead>
+                  <TableHead className="text-end">
+                    {t("table.actions")}
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -430,7 +436,10 @@ function AdminQuizQuestionsContent() {
                   value={String(quizId)}
                   onValueChange={(val) => setQuizId(Number(val))}
                 >
-                  <SelectTrigger id="question-quiz" data-testid="input-question-quiz">
+                  <SelectTrigger
+                    id="question-quiz"
+                    data-testid="input-question-quiz"
+                  >
                     <SelectValue placeholder={t("form.quiz")} />
                   </SelectTrigger>
                   <SelectContent>
@@ -475,7 +484,9 @@ function AdminQuizQuestionsContent() {
                 />
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="explanation-vi">{t("form.explanationVi")}</Label>
+                <Label htmlFor="explanation-vi">
+                  {t("form.explanationVi")}
+                </Label>
                 <Textarea
                   id="explanation-vi"
                   rows={2}
@@ -505,7 +516,9 @@ function AdminQuizQuestionsContent() {
                 />
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="explanation-en">{t("form.explanationEn")}</Label>
+                <Label htmlFor="explanation-en">
+                  {t("form.explanationEn")}
+                </Label>
                 <Textarea
                   id="explanation-en"
                   rows={2}
@@ -562,7 +575,13 @@ function AdminQuizQuestionsContent() {
                           className="accent-emerald-600 size-4 cursor-pointer"
                           data-testid={`radio-option-correct-${idx}`}
                         />
-                        <span className={opt.isCorrect ? "text-emerald-600 dark:text-emerald-400 font-bold" : ""}>
+                        <span
+                          className={
+                            opt.isCorrect
+                              ? "text-emerald-600 dark:text-emerald-400 font-bold"
+                              : ""
+                          }
+                        >
                           {t("form.correctAnswer")}
                         </span>
                         {opt.isCorrect && (
@@ -589,7 +608,11 @@ function AdminQuizQuestionsContent() {
                       <Input
                         value={opt.optionTextVi}
                         onChange={(e) =>
-                          handleOptionChange(idx, "optionTextVi", e.target.value)
+                          handleOptionChange(
+                            idx,
+                            "optionTextVi",
+                            e.target.value
+                          )
                         }
                         placeholder={t("form.optionViPlaceholder")}
                         data-testid={`input-option-vi-${idx}`}
@@ -598,7 +621,11 @@ function AdminQuizQuestionsContent() {
                       <Input
                         value={opt.optionTextEn || ""}
                         onChange={(e) =>
-                          handleOptionChange(idx, "optionTextEn", e.target.value)
+                          handleOptionChange(
+                            idx,
+                            "optionTextEn",
+                            e.target.value
+                          )
                         }
                         placeholder={t("form.optionEnPlaceholder")}
                         data-testid={`input-option-en-${idx}`}
@@ -641,10 +668,7 @@ function AdminQuizQuestionsContent() {
             {t("confirm.deleteMessage")}
           </p>
           <DialogFooter className="gap-2 sm:gap-0">
-            <Button
-              variant="outline"
-              onClick={() => setIsDeleteOpen(false)}
-            >
+            <Button variant="outline" onClick={() => setIsDeleteOpen(false)}>
               {t("actions.cancel")}
             </Button>
             <Button

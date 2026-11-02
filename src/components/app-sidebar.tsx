@@ -198,7 +198,10 @@ function AppSidebar() {
                         asChild
                         isActive={pathname.includes("/admin-panel/lessons")}
                       >
-                        <Link href="/admin-panel/lessons" data-testid="nav-admin-lessons">
+                        <Link
+                          href="/admin-panel/lessons"
+                          data-testid="nav-admin-lessons"
+                        >
                           {t("common:navigation.lessons")}
                         </Link>
                       </SidebarMenuButton>
@@ -206,9 +209,14 @@ function AppSidebar() {
                     <SidebarMenuItem>
                       <SidebarMenuButton
                         asChild
-                        isActive={pathname.includes("/admin-panel/quiz-questions")}
+                        isActive={pathname.includes(
+                          "/admin-panel/quiz-questions"
+                        )}
                       >
-                        <Link href="/admin-panel/quiz-questions" data-testid="nav-admin-quizzes">
+                        <Link
+                          href="/admin-panel/quiz-questions"
+                          data-testid="nav-admin-quizzes"
+                        >
                           {t("common:navigation.quizQuestions")}
                         </Link>
                       </SidebarMenuButton>
@@ -218,7 +226,10 @@ function AppSidebar() {
                         asChild
                         isActive={pathname.includes("/admin-panel/labs")}
                       >
-                        <Link href="/admin-panel/labs" data-testid="nav-admin-labs">
+                        <Link
+                          href="/admin-panel/labs"
+                          data-testid="nav-admin-labs"
+                        >
                           {t("common:navigation.labs")}
                         </Link>
                       </SidebarMenuButton>
@@ -228,7 +239,10 @@ function AppSidebar() {
                         asChild
                         isActive={pathname.includes("/admin-panel/bulk-import")}
                       >
-                        <Link href="/admin-panel/bulk-import" data-testid="nav-admin-bulk-import">
+                        <Link
+                          href="/admin-panel/bulk-import"
+                          data-testid="nav-admin-bulk-import"
+                        >
                           {t("common:navigation.bulkImport")}
                         </Link>
                       </SidebarMenuButton>
@@ -238,7 +252,10 @@ function AppSidebar() {
                         asChild
                         isActive={pathname.includes("/admin-panel/statistics")}
                       >
-                        <Link href="/admin-panel/statistics" data-testid="nav-admin-statistics">
+                        <Link
+                          href="/admin-panel/statistics"
+                          data-testid="nav-admin-statistics"
+                        >
                           {t("common:navigation.statistics")}
                         </Link>
                       </SidebarMenuButton>

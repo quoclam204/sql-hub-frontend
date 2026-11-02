@@ -91,6 +91,7 @@ function MultipleImagePicker(props: MultipleImagePickerProps) {
               </div>
               <img
                 src={item.path}
+                alt=""
                 loading="lazy"
                 className="size-full object-cover"
               />

@@ -53,7 +53,11 @@ function cleanupTmp() {
 
 function writeJson(locale, namespace, data) {
   const file = join(TMP_DIR, "locales", locale, `${namespace}.json`);
-  writeFileSync(file, typeof data === "string" ? data : JSON.stringify(data, null, 2), "utf-8");
+  writeFileSync(
+    file,
+    typeof data === "string" ? data : JSON.stringify(data, null, 2),
+    "utf-8"
+  );
 }
 
 function runCli(localesDir) {
@@ -246,7 +250,9 @@ describe("E2E: CLI process exit codes", () => {
 
     const { exitCode, stdout } = runCli(join(TMP_DIR, "locales"));
     assert.equal(exitCode, 0);
-    assert.ok(stdout.includes("All i18n keys and namespace files are consistent"));
+    assert.ok(
+      stdout.includes("All i18n keys and namespace files are consistent")
+    );
   });
 
   it("exits with 1 when keys or files are missing", () => {

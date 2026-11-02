@@ -86,6 +86,7 @@ function ImagePicker(props: ImagePickerProps) {
             </div>
             <img
               src={props.value.path}
+              alt=""
               loading="lazy"
               className="size-full object-cover"
             />

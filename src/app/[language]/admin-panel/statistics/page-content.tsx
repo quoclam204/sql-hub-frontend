@@ -36,7 +36,6 @@ import HelpCircle from "lucide-react/dist/esm/icons/help-circle";
 import RotateCw from "lucide-react/dist/esm/icons/rotate-cw";
 import ChevronLeft from "lucide-react/dist/esm/icons/chevron-left";
 import AlertTriangle from "lucide-react/dist/esm/icons/alert-triangle";
-import CheckCircle2 from "lucide-react/dist/esm/icons/check-circle-2";
 
 function AdminStatisticsContent() {
   const { t, i18n } = useTranslation("admin-panel-statistics");
@@ -85,7 +84,12 @@ function AdminStatisticsContent() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <Button variant="ghost" size="sm" asChild className="gap-1 p-0 h-auto text-muted-foreground hover:text-foreground">
+            <Button
+              variant="ghost"
+              size="sm"
+              asChild
+              className="gap-1 p-0 h-auto text-muted-foreground hover:text-foreground"
+            >
               <Link href="/admin-panel">
                 <ChevronLeft className="size-4" />
                 <span>Admin Portal</span>
@@ -98,9 +102,7 @@ function AdminStatisticsContent() {
           >
             {t("title")}
           </h1>
-          <p className="text-muted-foreground text-sm mt-1">
-            {t("subtitle")}
-          </p>
+          <p className="text-muted-foreground text-sm mt-1">{t("subtitle")}</p>
         </div>
 
         <Button
@@ -166,7 +168,10 @@ function AdminStatisticsContent() {
           {/* Overview Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Card 1: Learners */}
-            <Card data-testid="stat-card-learners" className="relative overflow-hidden">
+            <Card
+              data-testid="stat-card-learners"
+              className="relative overflow-hidden"
+            >
               <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   {t("overview.totalLearners")}
@@ -195,7 +200,10 @@ function AdminStatisticsContent() {
             </Card>
 
             {/* Card 2: SQL Lab Pass Rate */}
-            <Card data-testid="stat-card-pass-rate" className="relative overflow-hidden">
+            <Card
+              data-testid="stat-card-pass-rate"
+              className="relative overflow-hidden"
+            >
               <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   {t("overview.labPassRate")}
@@ -215,7 +223,8 @@ function AdminStatisticsContent() {
                   <span className="font-semibold text-foreground">
                     {overview.passedSubmissions}
                   </span>{" "}
-                  / {overview.totalSubmissions} {t("overview.totalSubmissions").toLowerCase()}
+                  / {overview.totalSubmissions}{" "}
+                  {t("overview.totalSubmissions").toLowerCase()}
                 </div>
                 <p className="text-[11px] text-muted-foreground/80 mt-1">
                   {t("overview.learnerPassRate")}:{" "}
@@ -227,7 +236,10 @@ function AdminStatisticsContent() {
             </Card>
 
             {/* Card 3: Lessons Completed */}
-            <Card data-testid="stat-card-lessons" className="relative overflow-hidden">
+            <Card
+              data-testid="stat-card-lessons"
+              className="relative overflow-hidden"
+            >
               <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   {t("overview.lessonsCompleted")}
@@ -256,7 +268,10 @@ function AdminStatisticsContent() {
             </Card>
 
             {/* Card 4: Quiz Performance */}
-            <Card data-testid="stat-card-quizzes" className="relative overflow-hidden">
+            <Card
+              data-testid="stat-card-quizzes"
+              className="relative overflow-hidden"
+            >
               <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   {t("overview.averageQuizScore")}
@@ -294,24 +309,30 @@ function AdminStatisticsContent() {
           {/* Per-Lab Breakdown Table */}
           <Card data-testid="admin-statistics-labs-table">
             <CardHeader>
-              <CardTitle className="text-lg">
-                {t("labsTable.title")}
-              </CardTitle>
-              <CardDescription>
-                {t("labsTable.description")}
-              </CardDescription>
+              <CardTitle className="text-lg">{t("labsTable.title")}</CardTitle>
+              <CardDescription>{t("labsTable.description")}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto rounded-md border">
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="w-16">{t("labsTable.colLabId")}</TableHead>
+                      <TableHead className="w-16">
+                        {t("labsTable.colLabId")}
+                      </TableHead>
                       <TableHead>{t("labsTable.colTitle")}</TableHead>
-                      <TableHead className="text-center">{t("labsTable.colSubmissions")}</TableHead>
-                      <TableHead className="text-center">{t("labsTable.colPassed")}</TableHead>
-                      <TableHead className="text-center">{t("labsTable.colPassRate")}</TableHead>
-                      <TableHead className="text-right">{t("labsTable.colAvgRuntime")}</TableHead>
+                      <TableHead className="text-center">
+                        {t("labsTable.colSubmissions")}
+                      </TableHead>
+                      <TableHead className="text-center">
+                        {t("labsTable.colPassed")}
+                      </TableHead>
+                      <TableHead className="text-center">
+                        {t("labsTable.colPassRate")}
+                      </TableHead>
+                      <TableHead className="text-right">
+                        {t("labsTable.colAvgRuntime")}
+                      </TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -330,7 +351,8 @@ function AdminStatisticsContent() {
                         const title =
                           currentLang === "en" ? item.titleEn : item.titleVi;
                         const isHighPass = item.passRate >= 70;
-                        const isMedPass = item.passRate >= 40 && item.passRate < 70;
+                        const isMedPass =
+                          item.passRate >= 40 && item.passRate < 70;
 
                         return (
                           <TableRow
@@ -361,8 +383,8 @@ function AdminStatisticsContent() {
                                     isHighPass
                                       ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20"
                                       : isMedPass
-                                      ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20"
-                                      : "bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20"
+                                        ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20"
+                                        : "bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20"
                                   }
                                 >
                                   {item.passRate}%
@@ -370,7 +392,8 @@ function AdminStatisticsContent() {
                               )}
                             </TableCell>
                             <TableCell className="text-right font-mono text-xs text-muted-foreground">
-                              {item.totalSubmissions > 0 && item.averageRuntimeMs > 0
+                              {item.totalSubmissions > 0 &&
+                              item.averageRuntimeMs > 0
                                 ? `${item.averageRuntimeMs} ms`
                                 : "-"}
                             </TableCell>

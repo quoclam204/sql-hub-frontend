@@ -167,7 +167,11 @@ export function usePostAdminLessonService() {
 export function usePatchAdminLessonService() {
   const fetch = useFetch();
   return useCallback(
-    (id: number, data: UpdateLessonPayload, requestConfig?: RequestConfigType) => {
+    (
+      id: number,
+      data: UpdateLessonPayload,
+      requestConfig?: RequestConfigType
+    ) => {
       return fetch(`${API_URL}/v1/admin/lessons/${id}`, {
         method: "PATCH",
         body: JSON.stringify(data),
@@ -355,6 +359,15 @@ export type BulkImportErrorItem = {
   message: string;
 };
 
+export type BulkImportPreviewItem = {
+  slug?: string;
+  questionTextVi?: string;
+  questionTextEn?: string;
+  titleVi?: string;
+  titleEn?: string;
+  expectedQuery?: string;
+};
+
 export type BulkImportResult = {
   success: boolean;
   type: BulkImportType;
@@ -362,7 +375,7 @@ export type BulkImportResult = {
   totalCount: number;
   importedCount: number;
   errors: BulkImportErrorItem[];
-  preview?: any[];
+  preview?: BulkImportPreviewItem[];
 };
 
 export type BulkImportTemplates = {
@@ -440,5 +453,3 @@ export function useGetAdminStatisticsService() {
     [fetch]
   );
 }
-
-
