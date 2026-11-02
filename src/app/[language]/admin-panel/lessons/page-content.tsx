@@ -15,13 +15,7 @@ import {
   usePatchAdminLessonService,
   useDeleteAdminLessonService,
 } from "@/services/api/services/admin-content";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -90,7 +84,9 @@ function AdminLessonsContent() {
     try {
       const [coursesRes, lessonsRes] = await Promise.all([
         fetchCourses(),
-        fetchLessons(selectedCourseId !== "all" ? Number(selectedCourseId) : undefined),
+        fetchLessons(
+          selectedCourseId !== "all" ? Number(selectedCourseId) : undefined
+        ),
       ]);
 
       if (coursesRes.status === HTTP_CODES_ENUM.OK && coursesRes.data) {
@@ -227,14 +223,20 @@ function AdminLessonsContent() {
       <Card>
         <CardContent className="pt-6 flex items-center gap-4">
           <div className="w-full sm:w-64 space-y-1">
-            <Label htmlFor="course-filter" className="text-xs text-muted-foreground">
+            <Label
+              htmlFor="course-filter"
+              className="text-xs text-muted-foreground"
+            >
               {t("actions.filterByCourse")}
             </Label>
             <Select
               value={selectedCourseId}
               onValueChange={setSelectedCourseId}
             >
-              <SelectTrigger id="course-filter" data-testid="select-filter-course">
+              <SelectTrigger
+                id="course-filter"
+                data-testid="select-filter-course"
+              >
                 <SelectValue placeholder={t("actions.allCourses")} />
               </SelectTrigger>
               <SelectContent>
@@ -270,7 +272,9 @@ function AdminLessonsContent() {
                   <TableHead>{t("table.slug")}</TableHead>
                   <TableHead>{t("table.titleVi")}</TableHead>
                   <TableHead>{t("table.titleEn")}</TableHead>
-                  <TableHead className="text-end">{t("table.actions")}</TableHead>
+                  <TableHead className="text-end">
+                    {t("table.actions")}
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -279,10 +283,18 @@ function AdminLessonsContent() {
                     key={lesson.id}
                     data-testid={`lesson-row-${lesson.id}`}
                   >
-                    <TableCell className="font-medium">{lesson.order}</TableCell>
-                    <TableCell className="font-mono text-xs">{lesson.slug}</TableCell>
-                    <TableCell className="font-medium">{lesson.titleVi || "-"}</TableCell>
-                    <TableCell className="text-muted-foreground">{lesson.titleEn || "-"}</TableCell>
+                    <TableCell className="font-medium">
+                      {lesson.order}
+                    </TableCell>
+                    <TableCell className="font-mono text-xs">
+                      {lesson.slug}
+                    </TableCell>
+                    <TableCell className="font-medium">
+                      {lesson.titleVi || "-"}
+                    </TableCell>
+                    <TableCell className="text-muted-foreground">
+                      {lesson.titleEn || "-"}
+                    </TableCell>
                     <TableCell className="text-end space-x-2">
                       <Button
                         variant="outline"
@@ -334,7 +346,10 @@ function AdminLessonsContent() {
                   value={String(courseId)}
                   onValueChange={(val) => setCourseId(Number(val))}
                 >
-                  <SelectTrigger id="lesson-course" data-testid="input-lesson-course">
+                  <SelectTrigger
+                    id="lesson-course"
+                    data-testid="input-lesson-course"
+                  >
                     <SelectValue placeholder={t("form.course")} />
                   </SelectTrigger>
                   <SelectContent>
@@ -463,10 +478,7 @@ function AdminLessonsContent() {
             {t("confirm.deleteMessage")}
           </p>
           <DialogFooter className="gap-2 sm:gap-0">
-            <Button
-              variant="outline"
-              onClick={() => setIsDeleteOpen(false)}
-            >
+            <Button variant="outline" onClick={() => setIsDeleteOpen(false)}>
               {t("actions.cancel")}
             </Button>
             <Button

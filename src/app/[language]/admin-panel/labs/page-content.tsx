@@ -17,10 +17,7 @@ import {
   usePatchAdminLabService,
   useDeleteAdminLabService,
 } from "@/services/api/services/admin-content";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -151,14 +148,22 @@ function AdminLabsContent() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!datasetId || !expectedQuery.trim() || !titleVi.trim() || !titleEn.trim()) {
+    if (
+      !datasetId ||
+      !expectedQuery.trim() ||
+      !titleVi.trim() ||
+      !titleEn.trim()
+    ) {
       enqueueSnackbar(t("alerts.error"), { variant: "error" });
       return;
     }
 
     // NFR-02 & Safety check: must start with SELECT or WITH
     const normalizedQuery = expectedQuery.trim().toUpperCase();
-    if (!normalizedQuery.startsWith("SELECT") && !normalizedQuery.startsWith("WITH")) {
+    if (
+      !normalizedQuery.startsWith("SELECT") &&
+      !normalizedQuery.startsWith("WITH")
+    ) {
       enqueueSnackbar(t("alerts.queryValidationError"), { variant: "error" });
       return;
     }
@@ -269,21 +274,30 @@ function AdminLabsContent() {
                   <TableHead>{t("table.titleEn")}</TableHead>
                   <TableHead>{t("table.dataset")}</TableHead>
                   <TableHead>{t("table.lesson")}</TableHead>
-                  <TableHead className="w-24 text-center">{t("table.orderSensitive")}</TableHead>
-                  <TableHead className="text-end">{t("table.actions")}</TableHead>
+                  <TableHead className="w-24 text-center">
+                    {t("table.orderSensitive")}
+                  </TableHead>
+                  <TableHead className="text-end">
+                    {t("table.actions")}
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {labs.map((lab) => (
-                  <TableRow
-                    key={lab.id}
-                    data-testid={`lab-row-${lab.id}`}
-                  >
+                  <TableRow key={lab.id} data-testid={`lab-row-${lab.id}`}>
                     <TableCell className="font-medium">#{lab.id}</TableCell>
-                    <TableCell className="font-medium">{lab.titleVi || "-"}</TableCell>
-                    <TableCell className="text-muted-foreground">{lab.titleEn || "-"}</TableCell>
-                    <TableCell className="text-xs font-mono">{lab.datasetName || `Dataset #${lab.datasetId}`}</TableCell>
-                    <TableCell className="text-xs text-muted-foreground">{lab.lessonSlug || "-"}</TableCell>
+                    <TableCell className="font-medium">
+                      {lab.titleVi || "-"}
+                    </TableCell>
+                    <TableCell className="text-muted-foreground">
+                      {lab.titleEn || "-"}
+                    </TableCell>
+                    <TableCell className="text-xs font-mono">
+                      {lab.datasetName || `Dataset #${lab.datasetId}`}
+                    </TableCell>
+                    <TableCell className="text-xs text-muted-foreground">
+                      {lab.lessonSlug || "-"}
+                    </TableCell>
                     <TableCell className="text-center">
                       {lab.orderSensitive ? (
                         <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-600">
@@ -348,7 +362,10 @@ function AdminLabsContent() {
                   value={String(datasetId)}
                   onValueChange={(val) => setDatasetId(Number(val))}
                 >
-                  <SelectTrigger id="lab-dataset" data-testid="input-lab-dataset">
+                  <SelectTrigger
+                    id="lab-dataset"
+                    data-testid="input-lab-dataset"
+                  >
                     <SelectValue placeholder={t("form.dataset")} />
                   </SelectTrigger>
                   <SelectContent>
@@ -363,10 +380,7 @@ function AdminLabsContent() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="lab-lesson">{t("form.lesson")}</Label>
-                <Select
-                  value={lessonId}
-                  onValueChange={setLessonId}
-                >
+                <Select value={lessonId} onValueChange={setLessonId}>
                   <SelectTrigger id="lab-lesson" data-testid="input-lab-lesson">
                     <SelectValue placeholder={t("form.lesson")} />
                   </SelectTrigger>
@@ -535,10 +549,7 @@ function AdminLabsContent() {
             {t("confirm.deleteMessage")}
           </p>
           <DialogFooter className="gap-2 sm:gap-0">
-            <Button
-              variant="outline"
-              onClick={() => setIsDeleteOpen(false)}
-            >
+            <Button variant="outline" onClick={() => setIsDeleteOpen(false)}>
               {t("actions.cancel")}
             </Button>
             <Button

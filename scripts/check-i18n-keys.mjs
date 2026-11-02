@@ -100,7 +100,9 @@ export async function listNamespaceFiles(localeDir) {
  *   hasErrors: boolean
  * }>}
  */
-export async function compareLocales(localesDir = process.env.LOCALES_DIR || DEFAULT_LOCALES_DIR) {
+export async function compareLocales(
+  localesDir = process.env.LOCALES_DIR || DEFAULT_LOCALES_DIR
+) {
   const viDir = join(localesDir, LOCALE_VI);
   const enDir = join(localesDir, LOCALE_EN);
 
@@ -110,7 +112,9 @@ export async function compareLocales(localesDir = process.env.LOCALES_DIR || DEF
   }
   if (!existsSync(viDir)) {
     console.error(`❌ VI locale directory not found: ${viDir}`);
-    console.error("   Please create the VI locale directory with translation files.");
+    console.error(
+      "   Please create the VI locale directory with translation files."
+    );
     process.exit(2);
   }
 
@@ -207,7 +211,9 @@ function printMissingKeysReport(label, missingMap) {
 
   let totalKeys = 0;
   for (const [file, keys] of missingMap) {
-    console.log(`\n  📄 ${file} (${keys.length} key${keys.length > 1 ? "s" : ""}):`);
+    console.log(
+      `\n  📄 ${file} (${keys.length} key${keys.length > 1 ? "s" : ""}):`
+    );
     for (const key of keys) {
       console.log(`     • ${key}`);
       totalKeys++;
@@ -220,7 +226,9 @@ function printMissingKeysReport(label, missingMap) {
 
 // ── Main CLI Runner ──────────────────────────────────────────
 async function main() {
-  console.log("🔍 Checking i18n key consistency between VI and EN locales...\n");
+  console.log(
+    "🔍 Checking i18n key consistency between VI and EN locales...\n"
+  );
 
   const localesDir = process.env.LOCALES_DIR || DEFAULT_LOCALES_DIR;
   const {
@@ -233,7 +241,9 @@ async function main() {
   } = await compareLocales(localesDir);
 
   if (!hasErrors) {
-    console.log("✅ All i18n keys and namespace files are consistent between VI and EN locales.");
+    console.log(
+      "✅ All i18n keys and namespace files are consistent between VI and EN locales."
+    );
     process.exit(0);
   }
 
@@ -261,15 +271,22 @@ async function main() {
     }
   }
 
-  printMissingKeysReport("⚠️  Keys present in EN but missing in VI:", missingInVi);
-  printMissingKeysReport("⚠️  Keys present in VI but missing in EN:", missingInEn);
+  printMissingKeysReport(
+    "⚠️  Keys present in EN but missing in VI:",
+    missingInVi
+  );
+  printMissingKeysReport(
+    "⚠️  Keys present in VI but missing in EN:",
+    missingInEn
+  );
 
   console.log("\n❌ i18n key check failed. Please resolve the errors above.\n");
   process.exit(1);
 }
 
 // Run directly if invoked as script
-const isMainModule = import.meta.url === `file://${process.argv[1]?.replace(/\\/g, "/")}`;
+const isMainModule =
+  import.meta.url === `file://${process.argv[1]?.replace(/\\/g, "/")}`;
 if (isMainModule || process.argv[1]?.endsWith("check-i18n-keys.mjs")) {
   main().catch((err) => {
     console.error("❌ Fatal error:", err.message);
